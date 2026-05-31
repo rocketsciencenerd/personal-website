@@ -6,373 +6,165 @@
   <title>Portfolio — Katie Heinemann</title>
   <meta name="description" content="Portfolio of projects by Katie Heinemann — aerospace, software, public health, and infrastructure engineering." />
   <link rel="canonical" href="https://www.katieheinemann.space/portfolio.html" />
-
-  <!-- Open Graph -->
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://www.katieheinemann.space/portfolio.html" />
   <meta property="og:title" content="Portfolio — Katie Heinemann" />
   <meta property="og:description" content="Portfolio of projects by Katie Heinemann — aerospace, software, public health, and infrastructure engineering." />
   <meta property="og:image" content="https://www.katieheinemann.space/img/katie-nbl.webp" />
-
-  <!-- Twitter Card -->
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:title" content="Portfolio — Katie Heinemann" />
   <meta name="twitter:description" content="Portfolio of projects by Katie Heinemann — aerospace, software, public health, and infrastructure engineering." />
   <meta name="twitter:image" content="https://www.katieheinemann.space/img/katie-nbl.webp" />
-
   <link rel="stylesheet" href="css/style.css" />
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
-  <style>
-    .project {
-      background: var(--bg);
-      border: 1px solid var(--border);
-      border-radius: 12px;
-      padding: 2.25rem;
-      margin-bottom: 2rem;
-    }
-
-    .project-header {
-      display: flex;
-      align-items: flex-start;
-      justify-content: space-between;
-      gap: 1.5rem;
-      margin-bottom: 1rem;
-      flex-wrap: wrap;
-    }
-
-    .project-header-left h2 {
-      font-size: 1.35rem;
-      font-weight: 800;
-      color: var(--navy);
-      margin-bottom: 0.2rem;
-      line-height: 1.25;
-    }
-
-    .project-header-left .org {
-      font-size: 0.9rem;
-      font-weight: 600;
-      color: var(--blue);
-    }
-
-    .project p {
-      font-size: 0.97rem;
-      color: var(--text);
-      line-height: 1.75;
-      margin-bottom: 1rem;
-    }
-
-    .project p:last-child { margin-bottom: 0; }
-
-    .project-section-label {
-      font-size: 0.75rem;
-      font-weight: 700;
-      text-transform: uppercase;
-      letter-spacing: 0.1em;
-      color: var(--text-light);
-      margin: 1.25rem 0 0.5rem;
-    }
-
-    .outcome-box {
-      background: var(--blue-light);
-      border-left: 3px solid var(--blue);
-      border-radius: 0 6px 6px 0;
-      padding: 0.9rem 1.1rem;
-      margin: 1rem 0;
-      font-size: 0.95rem;
-      color: var(--navy);
-      line-height: 1.65;
-    }
-
-    .pub-list {
-      list-style: none;
-      padding: 0;
-      margin: 0;
-    }
-
-    .pub-list li {
-      font-size: 0.88rem;
-      color: var(--text);
-      line-height: 1.55;
-      padding: 0.4rem 0;
-      border-bottom: 1px solid var(--border);
-      display: flex;
-      gap: 0.5rem;
-    }
-
-    .pub-list li:last-child { border-bottom: none; }
-
-    .pub-list li::before {
-      content: '→';
-      color: var(--blue);
-      flex-shrink: 0;
-      font-weight: 700;
-    }
-
-    .pub-list a {
-      color: var(--blue);
-    }
-
-    .recognition-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
-      gap: 1rem;
-      margin-top: 1.5rem;
-    }
-
-    .recognition-card {
-      background: var(--bg);
-      border: 1px solid var(--border);
-      border-radius: 8px;
-      padding: 1.25rem;
-      display: flex;
-      gap: 0.9rem;
-      align-items: flex-start;
-    }
-
-    .recognition-icon {
-      font-size: 1.5rem;
-      flex-shrink: 0;
-      line-height: 1;
-    }
-
-    .recognition-card h3 {
-      font-size: 0.92rem;
-      font-weight: 700;
-      color: var(--navy);
-      margin-bottom: 0.2rem;
-      line-height: 1.3;
-    }
-
-    .recognition-card p {
-      font-size: 0.82rem;
-      color: var(--text-light);
-      line-height: 1.45;
-      margin: 0;
-    }
-  </style>
 </head>
-<body>
+<body class="has-overlay-nav">
 
-<nav>
-  <div class="nav-inner">
-    <a href="index.html" class="nav-brand">Katie Heinemann</a>
-    <button class="hamburger" aria-label="Toggle menu" onclick="document.getElementById('nav-links').classList.toggle('open')">
-      <span></span><span></span><span></span>
-    </button>
-    <ul class="nav-links" id="nav-links">
-      <li><a href="index.html">Home</a></li>
-      <li><a href="portfolio.html" class="active">Portfolio</a></li>
-      <li><a href="resume.html">Resume</a></li>
-      <li><a href="giving-back.html">Giving Back</a></li>
-      <li><a href="contact.html">Contact</a></li>
-      <li class="nav-divider" aria-hidden="true"></li>
-      <li><a href="https://linkedin.com/in/katie-heinemann/" target="_blank" rel="noopener" class="nav-icon">
-        <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
-        LinkedIn
-      </a></li>
-      <li><a href="https://github.com/rocketsciencenerd" target="_blank" rel="noopener" class="nav-icon">
-        <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.374 0 0 5.373 0 12c0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23A11.509 11.509 0 0112 5.803c1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576C20.566 21.797 24 17.3 24 12c0-6.627-5.373-12-12-12z"/></svg>
-        GitHub
-      </a></li>
-    </ul>
-  </div>
+<nav class="nav-overlay" id="main-nav">
+  <a href="index.html" class="nav-brand">Katie Heinemann — Aerospace Engineer, MPH</a>
+  <button class="hamburger" aria-label="Toggle menu" onclick="document.getElementById('nav-links').classList.toggle('open')">
+    <span></span><span></span><span></span>
+  </button>
+  <ul class="nav-links" id="nav-links">
+    <li><a href="index.html">Home</a></li>
+    <li><a href="portfolio.html" class="active">Portfolio</a></li>
+    <li><a href="resume.html">Resume</a></li>
+    <li><a href="giving-back.html">Giving Back</a></li>
+    <li><a href="contact.html">Contact</a></li>
+    <li class="nav-divider" aria-hidden="true"></li>
+    <li><a href="https://linkedin.com/in/katie-heinemann/" target="_blank" rel="noopener" class="nav-icon" aria-label="LinkedIn">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+    </a></li>
+    <li><a href="https://github.com/rocketsciencenerd" target="_blank" rel="noopener" class="nav-icon" aria-label="GitHub">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.374 0 0 5.373 0 12c0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23A11.509 11.509 0 0112 5.803c1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576C20.566 21.797 24 17.3 24 12c0-6.627-5.373-12-12-12z"/></svg>
+    </a></li>
+    <li><a href="https://scholar.google.com/citations?user=VS_Ud0sAAAAJ&hl=en" target="_blank" rel="noopener" class="nav-icon" aria-label="Google Scholar">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M5.242 13.769L0 9.5 12 0l12 9.5-5.242 4.269C17.548 11.249 14.978 9.5 12 9.5c-2.977 0-5.548 1.748-6.758 4.269zM12 10a7 7 0 100 14 7 7 0 000-14z"/></svg>
+    </a></li>
+  </ul>
 </nav>
 
 <main>
 
-  <header class="page-hero" style="
-    background-image: linear-gradient(to right, rgba(10,22,40,0.92) 40%, rgba(10,22,40,0.6) 100%), url('img/portfolio-hero.png');
-    background-size: cover;
-    background-position: center;
-    padding: 80px 2rem 70px;
-  ">
-    <div class="page-hero-inner">
-      <h1>Portfolio</h1>
-      <p>Selected projects across aerospace, software engineering, public health, and infrastructure.</p>
+  <div class="portfolio-hero" style="background-image: url('img/portfolio-hero.png');">
+    <h1>Portfolio</h1>
+  </div>
+
+  <div style="max-width: var(--content-width); margin: 0 auto; padding: 4vw var(--page-padding);">
+
+    <!-- Recognition -->
+    <div style="margin-bottom: 3rem; padding-bottom: 3rem; border-bottom: 1px solid #e0e0e0;">
+      <h2 class="section-heading" style="font-size: clamp(1.5rem, 3vw, 2.2rem); margin-bottom: 1rem;">Selected Recognition</h2>
+      <ul class="recognition-list">
+        <li>NASA Software of the Year — Honorable Mention, Maestro Flight Procedure Tracking Application</li>
+        <li><a href="https://www.minnesotaalumni.org/stories/rising-alumni" target="_blank" rel="noopener" style="text-decoration:underline;">2024 On The Rise Alumni Leader Award</a> — University of Minnesota</li>
+        <li>CompTIA Security+</li>
+        <li>3× GE Above and Beyond Award for Exemplary Customer Service</li>
+      </ul>
     </div>
-  </header>
 
-  <!-- RECOGNITION -->
-  <section class="section section-alt">
-    <div class="container">
-      <p class="section-label">Selected Recognition</p>
-      <h2 class="section-title">Awards &amp; Honors</h2>
-      <div class="recognition-grid">
-        <div class="recognition-card">
-          <span class="recognition-icon">🏆</span>
-          <div>
-            <h3>NASA Software of the Year — Honorable Mention</h3>
-            <p>Maestro Flight Procedure Tracking Application</p>
-          </div>
-        </div>
-        <div class="recognition-card">
-          <span class="recognition-icon">🎓</span>
-          <div>
-            <h3><a href="https://www.minnesotaalumni.org/stories/rising-alumni" target="_blank" rel="noopener">2024 On The Rise Alumni Leader Award</a></h3>
-            <p>University of Minnesota</p>
-          </div>
-        </div>
-        <div class="recognition-card">
-          <span class="recognition-icon">🔒</span>
-          <div>
-            <h3>CompTIA Security+</h3>
-            <p>Certified security practitioner</p>
-          </div>
-        </div>
-        <div class="recognition-card">
-          <span class="recognition-icon">⭐</span>
-          <div>
-            <h3>3× GE Above and Beyond Award</h3>
-            <p>Exemplary customer service across global commissioning deployments</p>
-          </div>
-        </div>
-      </div>
+    <!-- Project 1 -->
+    <div class="project-block">
+      <h2>Human Performance IoT Platform</h2>
+      <p class="project-org">NASA Johnson Space Center — EEPL (contract)</p>
+      <p>Designed and built a fleet of biometric IoT devices monitoring heart rate, core body temperature, and CO₂ within EVA suits across hostile field environments — the Neutral Buoyancy Lab (underwater, behind a DMZ, at the end of a signal-extended ethernet run), ARGOS, and DRATS analog deployments. Solved hard embedded problems: making a Bluetooth HRM work underwater, navigating network DMZs, architecting an MQTT pipeline on AWS IoT Core, and migrating to Greengrass for OTA reliability. Devices write locally for resilience, stream in parallel, and authenticate with IoT keys.</p>
+      <p class="project-outcome">Created a 6-year longitudinal biometric dataset used by NASA flight surgeons, researchers, and mission planners. Data from this platform is actively shaping how NASA plans and executes human spaceflight.</p>
+      <p class="project-sub-label">Publications &amp; Documentation</p>
+      <ul class="pub-list">
+        <li><a href="https://www.nasa.gov/reference/jsc-human-factors-performance/" target="_blank" rel="noopener">NASA JSC Human Factors &amp; Performance Lab (EEPL)</a></li>
+        <li><a href="https://ntrs.nasa.gov/citations/20220007371" target="_blank" rel="noopener">NASA Technical Report — NTRS</a></li>
+        <li><em>Human Thermal Analysis of Traverse and Geology Tasks During Simulated Lunar EVA</em> — 2023 IEEE Aerospace Conference</li>
+        <li><em>Supporting Exploration Missions by Enabling Exploration Mission System Software (ICES-2023-242)</em> — ICES</li>
+        <li><em>Novel Approaches to Metabolic Consumption Modeling During ISS EVA Planning</em> — 13th Annual ISS R&amp;D Conference (2024)</li>
+        <li><em>Core Body Temperature Predictions Using Metabolic Energy Expenditure and Heart Rate During Simulated EVA</em> — ICES 2024</li>
+        <li><em>EVA Mission Systems Software (EMSS): How Software Systems are Supporting Science and Operations in the Planning and Execution of Artemis EVAs</em> — Artemis Science Team Face to Face (2024)</li>
+        <li><em>Helmet Mounted Display Technology for EVA Training in NASA's Neutral Buoyancy Lab</em> — 2023 NASA HRP Investigators' Workshop</li>
+        <li><em>Cross-Analog Validity Evidence for Unobtrusive Measurement Strategies for Individual and Team Competencies</em> — NASA HRP Investigators' Workshop (2020)</li>
+      </ul>
     </div>
-  </section>
 
-  <!-- PROJECTS -->
-  <section class="section">
-    <div class="container">
-      <p class="section-label">Projects</p>
-      <h2 class="section-title" style="margin-bottom: 2rem;">Selected Work</h2>
-
-      <!-- PROJECT 1 -->
-      <div class="project">
-        <div class="project-header">
-          <div class="project-header-left">
-            <h2>Human Performance IoT Platform</h2>
-            <span class="org">NASA Johnson Space Center — EEPL (contract)</span>
-          </div>
-          <span class="portfolio-tag tag-nasa" style="margin:0;">NASA / Aerospace</span>
-        </div>
-
-        <p>Designed and built a fleet of biometric IoT devices monitoring heart rate, core body temperature, and CO₂ within EVA suits across hostile field environments — the Neutral Buoyancy Lab (underwater, behind a DMZ, at the end of a signal-extended ethernet run), ARGOS, and DRATS analog deployments. Solved hard embedded problems: making a Bluetooth HRM work underwater, navigating network DMZs, architecting an MQTT pipeline on AWS IoT Core, and migrating to Greengrass for OTA reliability. Devices write locally for resilience, stream in parallel, and authenticate with IoT keys.</p>
-
-        <div class="outcome-box">
-          Created a 6-year longitudinal biometric dataset used by NASA flight surgeons, researchers, and mission planners. Contributed as systems and data co-author across multiple peer-reviewed publications spanning ISS EVA metabolic modeling, Artemis EVA planning, core body temperature prediction, and lunar surface simulation. Data from this platform is actively shaping how NASA plans and executes human spaceflight.
-        </div>
-
-        <p class="project-section-label">Publications &amp; Documentation</p>
-        <ul class="pub-list">
-          <li><a href="https://www.nasa.gov/reference/jsc-human-factors-performance/" target="_blank" rel="noopener">NASA JSC Human Factors &amp; Performance Lab (EEPL)</a></li>
-          <li><a href="https://ntrs.nasa.gov/citations/20220007371" target="_blank" rel="noopener">NASA Technical Report — NTRS</a></li>
-          <li><em>Human Thermal Analysis of Traverse and Geology Tasks During Simulated Lunar EVA</em> — 2023 IEEE Aerospace Conference</li>
-          <li><em>Supporting Exploration Missions by Enabling Exploration Mission System Software (ICES-2023-242)</em> — International Conference on Environmental Systems</li>
-          <li><em>Novel Approaches to Metabolic Consumption Modeling During ISS EVA Planning</em> — 13th Annual ISS R&amp;D Conference (2024)</li>
-          <li><em>Core Body Temperature Predictions Using Metabolic Energy Expenditure and Heart Rate During Simulated EVA</em> — ICES 2024</li>
-          <li><em>EVA Mission Systems Software (EMSS): How Software Systems are Supporting Science and Operations in the Planning and Execution of Artemis EVAs</em> — Artemis Science Team Face to Face (2024)</li>
-          <li><em>Helmet Mounted Display Technology for EVA Training in NASA's Neutral Buoyancy Lab</em> — 2023 NASA Human Research Program Investigators' Workshop</li>
-          <li><em>Cross-Analog Validity Evidence for Unobtrusive Measurement Strategies for Individual and Team Competencies</em> — NASA HRP Investigators' Workshop (2020)</li>
-        </ul>
-      </div>
-
-      <!-- PROJECT 2 -->
-      <div class="project">
-        <div class="project-header">
-          <div class="project-header-left">
-            <h2>AI Platform, Compliance &amp; Enterprise Sales</h2>
-            <span class="org"><a href="https://www.violetlabs.com/" target="_blank" rel="noopener">Violet Labs</a> (seed-stage)</span>
-          </div>
-          <span class="portfolio-tag tag-software" style="margin:0;">Software Engineering</span>
-        </div>
-
-        <p>On a 3-person engineering team, built the customer-facing unified LLM provider layer integrating 7 providers (Claude, OpenAI, Bedrock, Gemini, Vertex, Groq, Azure Foundry) behind a single tool-calling interface — architected as bring-your-own-model to keep sensitive customer data out of Violet's processing agreements, enabling sales into healthcare, defense, and aerospace. Powered both the in-product agentic chat (engineers querying their hardware data in natural language) and a public MCP server giving AI clients (Claude, ChatGPT, Cursor, GitHub Copilot, Microsoft Copilot, Windsurf) secure, permission-scoped access to structured Violet workspace data. Owned the edge deployment architecture for HIPAA/FedRAMP customers. Led SOC 2 Type I + II from zero — audit-ready in 3 months, certified in 6. Re-architected CI/CD on GitHub Actions cutting build costs and deploy times by 50%.</p>
-
-        <p>Beyond engineering: identified that Emory University's NIH-funded cystic fibrosis research team had a data platform with no frontend — recognized the product fit, packaged the edge deployment to meet their HIPAA requirements, and pitched the CEO and CTO to pursue the deal. Closed a <strong>$10K/month contract</strong> at a company where existing contracts were <strong>$10K/year</strong> — a 12× larger deal that became the company's largest account.</p>
-
-        <div class="outcome-box">
-          Opened healthcare as a net-new vertical, set a new commercial ceiling for the company, and delivered the compliance and AI infrastructure required to sell into regulated enterprise markets.
-        </div>
-
-        <p class="project-section-label">Documentation</p>
-        <ul class="pub-list">
-          <li><a href="https://docs.violetlabs.com/ai/mcp" target="_blank" rel="noopener">Violet MCP Server — Public Documentation</a></li>
-          <li><a href="https://reporter.nih.gov/search/TxNs2nZMUEyDRdoywNGcCw/project-details/10781129" target="_blank" rel="noopener">NIH Grant — Emory University Cystic Fibrosis Data Warehouse ($1M)</a></li>
-        </ul>
-      </div>
-
-      <!-- PROJECT 3 -->
-      <div class="project">
-        <div class="project-header">
-          <div class="project-header-left">
-            <h2>COVID-19 Crisis Response</h2>
-            <span class="org">Johns Hopkins Hospital System</span>
-          </div>
-          <span class="portfolio-tag tag-health" style="margin:0;">Emergency Management</span>
-        </div>
-
-        <p>Served as Planning Chief of the Unified COVID-19 Command Center during the first 90 days of the pandemic, when PPE was being rationed nationally. Partnered with NASA APL to complete a face shield design, then coordinated a campus-wide distributed 3D printing operation — mapping and unifying every available printer on campus through existing networks, and securing a $10K grant to fund materials. Built a 600+ person volunteer network from zero to staff logistics, assembly, data collection, and phone banks.</p>
-
-        <div class="outcome-box">
-          Produced 16,000+ face shields and ear-saver clips delivered to ICU and ED frontline workers during the peak of the shortage. Launched the COVID Data team to surface response trends and drive corrective action across the command center — all executed in under 3 months.
-        </div>
-
-        <p class="project-section-label">Press &amp; Coverage</p>
-        <ul class="pub-list">
-          <li><a href="https://www.bme.jhu.edu/news-events/news/students-organize-efforts-to-3-d-print-ppe-for-the-johns-hopkins-hospital/" target="_blank" rel="noopener">Students Organize Efforts to 3D Print PPE for Johns Hopkins Hospital</a> — Johns Hopkins BME</li>
-          <li><a href="https://madison.com/opinion/column/katie-heinemann-and-benjamin-bigelow-covid-19-our-generations-call-to-arms/article_2b334edf-e536-5690-9ce4-793545df706e.html" target="_blank" rel="noopener">COVID-19: Our Generation's Call to Arms</a> — Madison.com (co-authored)</li>
-        </ul>
-      </div>
-
-      <!-- PROJECT 4 -->
-      <div class="project">
-        <div class="project-header">
-          <div class="project-header-left">
-            <h2>Emergency Infrastructure Recovery</h2>
-            <span class="org"><a href="https://biobot.io/" target="_blank" rel="noopener">Biobot Analytics</a> (Series A)</span>
-          </div>
-          <span class="portfolio-tag tag-software" style="margin:0;">Software Engineering</span>
-        </div>
-
-        <p>When Biobot's production EKS cluster — the backbone of a public health surveillance platform serving CDC, NIH, and state health departments — failed over a weekend after an untriggered Kubernetes update, immediately diagnosed the failure and put an ECS migration into motion. The cluster had been console-provisioned by a departed contractor with no IaC, no documentation, and no runbook. Designed the replacement Terraform-managed ECS Fargate architecture from scratch under pressure: networking, IAM, task definitions, and CI/CD pipelines — then executed the cutover.</p>
-
-        <div class="outcome-box">
-          Restored a production public health platform with no planned downtime window, replacing an irreproducible undocumented cluster with infrastructure that could be maintained, audited, and scaled.
-        </div>
-      </div>
-
-      <!-- PROJECT 5 -->
-      <div class="project">
-        <div class="project-header">
-          <div class="project-header-left">
-            <h2>Global Water Infrastructure Commissioning</h2>
-            <span class="org">GE Power — Water Engineering Leadership Program</span>
-          </div>
-          <span class="portfolio-tag tag-infra" style="margin:0;">Infrastructure</span>
-        </div>
-
-        <p>On-site engineer and sole GE representative for the commissioning of multi-million dollar water treatment facilities worldwide — writing and debugging mission-critical machine controls code (RSLogix, FactoryTalk, Modicon, Wonderware) directly on customer sites as the primary technical contact between GE, the customer, and vendors. Projects spanned municipal wastewater, industrial wastewater, drinking water, and ultra-pure water across a marquee customer list including <strong>Micron, Intel, Coca-Cola</strong>, and municipal systems — including a <strong>$240.8M upgrade</strong> to Riverside's Water Quality Control Plant (31 million gallons/day serving 320,000 people) as sole on-site engineer, and an extended deployment on the Micron Fab 10x semiconductor fabrication facility in Singapore requiring ultra-pure water systems where contamination tolerances are measured in parts per billion.</p>
-
-        <div class="outcome-box">
-          Delivered multi-million dollar projects across three continents for Fortune 500 and municipal customers. Earned three GE Above and Beyond Awards for exemplary customer service. Traveled 80% of the year including extended international deployments.
-        </div>
-
-        <p class="project-section-label">Referenced Projects</p>
-        <ul class="pub-list">
-          <li><em>Building for the Future with the Power of 3D NAND</em> — Micron Fab 10x Singapore</li>
-          <li><a href="https://www.watercanada.net/canadian-oil-refinery-to-reuse-100-per-cent-of-water-with-ges-wastewater-treatment-technology/" target="_blank" rel="noopener">Canadian Oil Refinery to Reuse 100% of Water with GE's Wastewater Treatment Technology</a> — FCL Regina, Saskatchewan</li>
-          <li><em>Riverside: Wastewater Plant Getting $240.8 Million Upgrade</em> — Riverside Water Quality Control Plant</li>
-        </ul>
-      </div>
-
+    <!-- Project 2 -->
+    <div class="project-block">
+      <h2>AI Platform, Compliance &amp; Enterprise Sales</h2>
+      <p class="project-org"><a href="https://www.violetlabs.com/" target="_blank" rel="noopener" style="text-decoration:underline;">Violet Labs</a> (seed-stage)</p>
+      <p>On a 3-person engineering team, built the customer-facing unified LLM provider layer integrating 7 providers (Claude, OpenAI, Bedrock, Gemini, Vertex, Groq, Azure Foundry) behind a single tool-calling interface — architected as bring-your-own-model to keep sensitive customer data out of Violet's processing agreements, enabling sales into healthcare, defense, and aerospace. Powered both the in-product agentic chat and a public MCP server giving AI clients (Claude, ChatGPT, Cursor, GitHub Copilot, Windsurf) secure, permission-scoped access to structured Violet workspace data. Led SOC 2 Type I + II from zero — audit-ready in 3 months, certified in 6. Re-architected CI/CD cutting build costs and deploy times 50%.</p>
+      <p>Identified that Emory University's NIH-funded cystic fibrosis research team had a data platform with no frontend — packaged the edge deployment to meet their HIPAA requirements and closed a <strong>$10K/month contract</strong> at a company where existing contracts were <strong>$10K/year</strong> — a 12× deal that became the company's largest account.</p>
+      <p class="project-outcome">Opened healthcare as a net-new vertical and delivered the compliance and AI infrastructure required to sell into regulated enterprise markets.</p>
+      <p class="project-sub-label">Documentation</p>
+      <ul class="pub-list">
+        <li><a href="https://docs.violetlabs.com/ai/mcp" target="_blank" rel="noopener">Violet MCP Server — Public Documentation</a></li>
+        <li><a href="https://reporter.nih.gov/search/TxNs2nZMUEyDRdoywNGcCw/project-details/10781129" target="_blank" rel="noopener">NIH Grant — Emory University Cystic Fibrosis Data Warehouse ($1M)</a></li>
+      </ul>
     </div>
-  </section>
+
+    <!-- Project 3 -->
+    <div class="project-block">
+      <h2>COVID-19 Crisis Response</h2>
+      <p class="project-org">Johns Hopkins Hospital System</p>
+      <p>Served as Planning Chief of the Unified COVID-19 Command Center during the first 90 days of the pandemic, when PPE was being rationed nationally. Partnered with NASA APL to complete a face shield design, then coordinated a campus-wide distributed 3D printing operation — mapping and unifying every available printer on campus, securing a $10K grant for materials. Built a 600+ person volunteer network from zero to staff logistics, assembly, data collection, and phone banks.</p>
+      <p class="project-outcome">Produced 16,000+ face shields and ear-saver clips delivered to ICU and ED frontline workers during the peak of the shortage — all executed in under 3 months.</p>
+      <p class="project-sub-label">Press &amp; Coverage</p>
+      <ul class="pub-list">
+        <li><a href="https://www.bme.jhu.edu/news-events/news/students-organize-efforts-to-3-d-print-ppe-for-the-johns-hopkins-hospital/" target="_blank" rel="noopener">Students Organize Efforts to 3D Print PPE for Johns Hopkins Hospital</a> — Johns Hopkins BME</li>
+        <li><a href="https://madison.com/opinion/column/katie-heinemann-and-benjamin-bigelow-covid-19-our-generations-call-to-arms/article_2b334edf-e536-5690-9ce4-793545df706e.html" target="_blank" rel="noopener">COVID-19: Our Generation's Call to Arms</a> — Madison.com (co-authored)</li>
+      </ul>
+    </div>
+
+    <!-- Project 4 -->
+    <div class="project-block">
+      <h2>Emergency Infrastructure Recovery</h2>
+      <p class="project-org"><a href="https://biobot.io/" target="_blank" rel="noopener" style="text-decoration:underline;">Biobot Analytics</a> (Series A)</p>
+      <p>When Biobot's production EKS cluster — the backbone of a public health surveillance platform serving CDC, NIH, and state health departments — failed over a weekend after an untriggered Kubernetes update, immediately diagnosed the failure and put an ECS migration into motion. The cluster had been console-provisioned by a departed contractor with no IaC, no documentation, and no runbook. Designed the replacement Terraform-managed ECS Fargate architecture from scratch under pressure: networking, IAM, task definitions, and CI/CD pipelines — then executed the cutover.</p>
+      <p class="project-outcome">Restored a production public health platform with no planned downtime window, replacing an irreproducible undocumented cluster with infrastructure that could be maintained, audited, and scaled.</p>
+    </div>
+
+    <!-- Project 5 -->
+    <div class="project-block">
+      <h2>Global Water Infrastructure Commissioning</h2>
+      <p class="project-org">GE Power — Water Engineering Leadership Program</p>
+      <p>On-site engineer and sole GE representative for the commissioning of multi-million dollar water treatment facilities worldwide — writing and debugging mission-critical machine controls code (RSLogix, FactoryTalk, Modicon, Wonderware) directly on customer sites. Projects spanned municipal wastewater, industrial wastewater, drinking water, and ultra-pure water across <strong>Micron, Intel, Coca-Cola</strong>, and municipal systems — including a <strong>$240.8M upgrade</strong> to Riverside's Water Quality Control Plant (31 million gallons/day serving 320,000 people) and an extended deployment at Micron's Fab 10x semiconductor facility in Singapore where contamination tolerances are measured in parts per billion.</p>
+      <p class="project-outcome">Delivered multi-million dollar projects across three continents. Earned three GE Above and Beyond Awards for exemplary customer service. Traveled 80% of the year including extended international deployments.</p>
+      <p class="project-sub-label">Referenced Projects</p>
+      <ul class="pub-list">
+        <li><em>Building for the Future with the Power of 3D NAND</em> — Micron Fab 10x Singapore</li>
+        <li><a href="https://www.watercanada.net/canadian-oil-refinery-to-reuse-100-per-cent-of-water-with-ges-wastewater-treatment-technology/" target="_blank" rel="noopener">Canadian Oil Refinery to Reuse 100% of Water with GE's Wastewater Treatment Technology</a> — FCL Regina, Saskatchewan</li>
+        <li><em>Riverside: Wastewater Plant Getting $240.8 Million Upgrade</em> — Riverside Water Quality Control Plant</li>
+      </ul>
+    </div>
+
+  </div>
 
 </main>
 
 <footer>
-  <div class="footer-inner">
-    <span class="footer-copy">©June 2026 Katie Heinemann</span>
-    <ul class="nav-links">
-      <li><a href="index.html">Home</a></li>
-      <li><a href="portfolio.html">Portfolio</a></li>
-      <li><a href="resume.html">Resume</a></li>
-      <li><a href="giving-back.html">Giving Back</a></li>
-      <li><a href="contact.html">Contact</a></li>
-    </ul>
+  <ul class="footer-nav">
+    <li><a href="index.html">About</a></li>
+    <li><span class="sep">|</span></li>
+    <li><a href="portfolio.html">Portfolio</a></li>
+    <li><span class="sep">|</span></li>
+    <li><a href="resume.html">Resume</a></li>
+    <li><span class="sep">|</span></li>
+    <li><a href="giving-back.html">Giving Back</a></li>
+    <li><span class="sep">|</span></li>
+    <li><a href="contact.html">Contact</a></li>
+  </ul>
+  <span class="footer-copy">©June 2026 — Katie Heinemann</span>
+  <div class="footer-icons">
+    <a href="https://linkedin.com/in/katie-heinemann/" target="_blank" rel="noopener" aria-label="LinkedIn"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg></a>
+    <a href="https://github.com/rocketsciencenerd" target="_blank" rel="noopener" aria-label="GitHub"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.374 0 0 5.373 0 12c0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23A11.509 11.509 0 0112 5.803c1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576C20.566 21.797 24 17.3 24 12c0-6.627-5.373-12-12-12z"/></svg></a>
+    <a href="https://scholar.google.com/citations?user=VS_Ud0sAAAAJ&hl=en" target="_blank" rel="noopener" aria-label="Google Scholar"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M5.242 13.769L0 9.5 12 0l12 9.5-5.242 4.269C17.548 11.249 14.978 9.5 12 9.5c-2.977 0-5.548 1.748-6.758 4.269zM12 10a7 7 0 100 14 7 7 0 000-14z"/></svg></a>
   </div>
 </footer>
+
+<script>
+  const nav = document.getElementById('main-nav');
+  const hero = document.querySelector('.portfolio-hero');
+  if (nav && hero) {
+    const observer = new IntersectionObserver(([e]) => {
+      nav.classList.toggle('nav-overlay', e.isIntersecting);
+    }, { threshold: 0.1 });
+    observer.observe(hero);
+  }
+</script>
 
 </body>
 </html>
