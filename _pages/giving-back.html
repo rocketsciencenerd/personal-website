@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Giving Back — Katie Heinemann</title>
+  <meta name="description" content="Katie Heinemann offers web development and software services to nonprofits and socially-conscious organizations at reduced or pro bono rates." />
+  <link rel="canonical" href="https://www.katieheinemann.space/giving-back.html" />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://www.katieheinemann.space/giving-back.html" />
+  <meta property="og:title" content="Giving Back — Katie Heinemann" />
+  <meta property="og:description" content="Katie Heinemann offers web development and software services to nonprofits and socially-conscious organizations at reduced or pro bono rates." />
+  <meta property="og:image" content="https://www.katieheinemann.space/img/katie-nbl.webp" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Giving Back — Katie Heinemann" />
+  <meta name="twitter:description" content="Katie Heinemann offers web development and software services to nonprofits at reduced or pro bono rates." />
+  <meta name="twitter:image" content="https://www.katieheinemann.space/img/katie-nbl.webp" />
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+
+{{NAV}}
+
+<main>
+
+  <!-- Full-bleed Amelia Earhart hero with quote overlay -->
+  <section class="hero-full" style="background-image: url('img/amelia-earhart.png'); background-position: center top; min-height: 60vh;">
+    <div class="hero-overlay-content">
+      <p class="hero-quote">Better to do a Good Deed Near at Home than go far away to burn incense.</p>
+      <p class="hero-attribution">Amelia Earhart</p>
+    </div>
+  </section>
+
+  <div class="section-center">
+    <h2 class="section-heading center">I Believe That Engineering Can Improve Lives &amp; Help Build Movements</h2>
+    <p style="font-size:1.05rem; line-height:1.8; color:#333; max-width:700px; margin: 0 auto 1.25rem;">
+      Are you a nonprofit or a group of socially minded individuals in need of web development or other software related services that seem out of reach? Let me know how I can help. I may be able to take it on at a reduced cost or even free of charge depending on your needs and my schedule.
+    </p>
+    <p style="margin-top: 2rem;"><a href="contact.html" class="btn">Get in Touch</a></p>
+  </div>
+
+</main>
+
+{{FOOTER}}
+
+<script>
+  const nav = document.getElementById('main-nav');
+  const hero = document.querySelector('.hero-full');
+  if (nav && hero) {
+    const observer = new IntersectionObserver(([e]) => {
+      nav.classList.toggle('nav-overlay', e.isIntersecting);
+    }, { threshold: 0.1 });
+    observer.observe(hero);
+  }
+</script>
+
+</body>
+</html>

@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Portfolio — Katie Heinemann</title>
+  <meta name="description" content="Portfolio of projects by Katie Heinemann — aerospace, software, public health, and infrastructure engineering." />
+  <link rel="canonical" href="https://www.katieheinemann.space/portfolio.html" />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://www.katieheinemann.space/portfolio.html" />
+  <meta property="og:title" content="Portfolio — Katie Heinemann" />
+  <meta property="og:description" content="Portfolio of projects by Katie Heinemann — aerospace, software, public health, and infrastructure engineering." />
+  <meta property="og:image" content="https://www.katieheinemann.space/img/katie-nbl.webp" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Portfolio — Katie Heinemann" />
+  <meta name="twitter:description" content="Portfolio of projects by Katie Heinemann — aerospace, software, public health, and infrastructure engineering." />
+  <meta name="twitter:image" content="https://www.katieheinemann.space/img/katie-nbl.webp" />
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+
+{{NAV}}
+
+<main>
+
+  <div class="portfolio-hero" style="background-image: url('img/portfolio-hero.png');">
+    <h1>Portfolio</h1>
+  </div>
+
+  <div style="max-width: var(--content-width); margin: 0 auto; padding: 4vw var(--page-padding);">
+
+    <!-- Recognition -->
+    <div style="margin-bottom: 3rem; padding-bottom: 3rem; border-bottom: 1px solid #e0e0e0;">
+      <h2 class="section-heading" style="font-size: clamp(1.5rem, 3vw, 2.2rem); margin-bottom: 1rem;">Selected Recognition</h2>
+      <ul class="recognition-list">
+        <li>NASA Software of the Year — Honorable Mention, Maestro Flight Procedure Tracking Application</li>
+        <li><a href="https://www.minnesotaalumni.org/stories/rising-alumni" target="_blank" rel="noopener" style="text-decoration:underline;">2024 On The Rise Alumni Leader Award</a> — University of Minnesota</li>
+        <li>CompTIA Security+</li>
+        <li>3× GE Above and Beyond Award for Exemplary Customer Service</li>
+      </ul>
+    </div>
+
+    <!-- Project 1 -->
+    <div class="project-block">
+      <h2>Human Performance IoT Platform</h2>
+      <p class="project-org">NASA Johnson Space Center — EEPL (contract)</p>
+      <p>Designed and built a fleet of biometric IoT devices monitoring heart rate, core body temperature, and CO₂ within EVA suits across hostile field environments — the Neutral Buoyancy Lab (underwater, behind a DMZ, at the end of a signal-extended ethernet run), ARGOS, and DRATS analog deployments. Solved hard embedded problems: making a Bluetooth HRM work underwater, navigating network DMZs, architecting an MQTT pipeline on AWS IoT Core, and migrating to Greengrass for OTA reliability. Devices write locally for resilience, stream in parallel, and authenticate with IoT keys.</p>
+      <p class="project-outcome">Created a 6-year longitudinal biometric dataset used by NASA flight surgeons, researchers, and mission planners. Data from this platform is actively shaping how NASA plans and executes human spaceflight.</p>
+      <p class="project-sub-label">Publications &amp; Documentation</p>
+      <ul class="pub-list">
+        <li><a href="https://www.nasa.gov/reference/jsc-human-factors-performance/" target="_blank" rel="noopener">NASA JSC Human Factors &amp; Performance Lab (EEPL)</a></li>
+        <li><a href="https://ntrs.nasa.gov/citations/20220007371" target="_blank" rel="noopener">NASA Technical Report — NTRS</a></li>
+        <li><em>Human Thermal Analysis of Traverse and Geology Tasks During Simulated Lunar EVA</em> — 2023 IEEE Aerospace Conference</li>
+        <li><em>Supporting Exploration Missions by Enabling Exploration Mission System Software (ICES-2023-242)</em> — ICES</li>
+        <li><em>Novel Approaches to Metabolic Consumption Modeling During ISS EVA Planning</em> — 13th Annual ISS R&amp;D Conference (2024)</li>
+        <li><em>Core Body Temperature Predictions Using Metabolic Energy Expenditure and Heart Rate During Simulated EVA</em> — ICES 2024</li>
+        <li><em>EVA Mission Systems Software (EMSS): How Software Systems are Supporting Science and Operations in the Planning and Execution of Artemis EVAs</em> — Artemis Science Team Face to Face (2024)</li>
+        <li><em>Helmet Mounted Display Technology for EVA Training in NASA's Neutral Buoyancy Lab</em> — 2023 NASA HRP Investigators' Workshop</li>
+        <li><em>Cross-Analog Validity Evidence for Unobtrusive Measurement Strategies for Individual and Team Competencies</em> — NASA HRP Investigators' Workshop (2020)</li>
+      </ul>
+    </div>
+
+    <!-- Project 2 -->
+    <div class="project-block">
+      <h2>AI Platform, Compliance &amp; Enterprise Sales</h2>
+      <p class="project-org"><a href="https://www.violetlabs.com/" target="_blank" rel="noopener" style="text-decoration:underline;">Violet Labs</a> (seed-stage)</p>
+      <p>On a 3-person engineering team, built the customer-facing unified LLM provider layer integrating 7 providers (Claude, OpenAI, Bedrock, Gemini, Vertex, Groq, Azure Foundry) behind a single tool-calling interface — architected as bring-your-own-model to keep sensitive customer data out of Violet's processing agreements, enabling sales into healthcare, defense, and aerospace. Powered both the in-product agentic chat and a public MCP server giving AI clients (Claude, ChatGPT, Cursor, GitHub Copilot, Windsurf) secure, permission-scoped access to structured Violet workspace data. Led SOC 2 Type I + II from zero — audit-ready in 3 months, certified in 6. Re-architected CI/CD cutting build costs and deploy times 50%.</p>
+      <p>Identified that Emory University's NIH-funded cystic fibrosis research team had a data platform with no frontend — packaged the edge deployment to meet their HIPAA requirements and closed a <strong>$10K/month contract</strong> at a company where existing contracts were <strong>$10K/year</strong> — a 12× deal that became the company's largest account.</p>
+      <p class="project-outcome">Opened healthcare as a net-new vertical and delivered the compliance and AI infrastructure required to sell into regulated enterprise markets.</p>
+      <p class="project-sub-label">Documentation</p>
+      <ul class="pub-list">
+        <li><a href="https://docs.violetlabs.com/ai/mcp" target="_blank" rel="noopener">Violet MCP Server — Public Documentation</a></li>
+        <li><a href="https://reporter.nih.gov/search/TxNs2nZMUEyDRdoywNGcCw/project-details/10781129" target="_blank" rel="noopener">NIH Grant — Emory University Cystic Fibrosis Data Warehouse ($1M)</a></li>
+      </ul>
+    </div>
+
+    <!-- Project 3 -->
+    <div class="project-block">
+      <h2>COVID-19 Crisis Response</h2>
+      <p class="project-org">Johns Hopkins Hospital System</p>
+      <p>Served as Planning Chief of the Unified COVID-19 Command Center during the first 90 days of the pandemic, when PPE was being rationed nationally. Partnered with NASA APL to complete a face shield design, then coordinated a campus-wide distributed 3D printing operation — mapping and unifying every available printer on campus, securing a $10K grant for materials. Built a 600+ person volunteer network from zero to staff logistics, assembly, data collection, and phone banks.</p>
+      <p class="project-outcome">Produced 16,000+ face shields and ear-saver clips delivered to ICU and ED frontline workers during the peak of the shortage — all executed in under 3 months.</p>
+      <p class="project-sub-label">Press &amp; Coverage</p>
+      <ul class="pub-list">
+        <li><a href="https://www.bme.jhu.edu/news-events/news/students-organize-efforts-to-3-d-print-ppe-for-the-johns-hopkins-hospital/" target="_blank" rel="noopener">Students Organize Efforts to 3D Print PPE for Johns Hopkins Hospital</a> — Johns Hopkins BME</li>
+        <li><a href="https://madison.com/opinion/column/katie-heinemann-and-benjamin-bigelow-covid-19-our-generations-call-to-arms/article_2b334edf-e536-5690-9ce4-793545df706e.html" target="_blank" rel="noopener">COVID-19: Our Generation's Call to Arms</a> — Madison.com (co-authored)</li>
+      </ul>
+    </div>
+
+    <!-- Project 4 -->
+    <div class="project-block">
+      <h2>Emergency Infrastructure Recovery</h2>
+      <p class="project-org"><a href="https://biobot.io/" target="_blank" rel="noopener" style="text-decoration:underline;">Biobot Analytics</a> (Series A)</p>
+      <p>When Biobot's production EKS cluster — the backbone of a public health surveillance platform serving CDC, NIH, and state health departments — failed over a weekend after an untriggered Kubernetes update, immediately diagnosed the failure and put an ECS migration into motion. The cluster had been console-provisioned by a departed contractor with no IaC, no documentation, and no runbook. Designed the replacement Terraform-managed ECS Fargate architecture from scratch under pressure: networking, IAM, task definitions, and CI/CD pipelines — then executed the cutover.</p>
+      <p class="project-outcome">Restored a production public health platform with no planned downtime window, replacing an irreproducible undocumented cluster with infrastructure that could be maintained, audited, and scaled.</p>
+    </div>
+
+    <!-- Project 5 -->
+    <div class="project-block">
+      <h2>Global Water Infrastructure Commissioning</h2>
+      <p class="project-org">GE Power — Water Engineering Leadership Program</p>
+      <p>On-site engineer and sole GE representative for the commissioning of multi-million dollar water treatment facilities worldwide — writing and debugging mission-critical machine controls code (RSLogix, FactoryTalk, Modicon, Wonderware) directly on customer sites. Projects spanned municipal wastewater, industrial wastewater, drinking water, and ultra-pure water across <strong>Micron, Intel, Coca-Cola</strong>, and municipal systems — including a <strong>$240.8M upgrade</strong> to Riverside's Water Quality Control Plant (31 million gallons/day serving 320,000 people) and an extended deployment at Micron's Fab 10x semiconductor facility in Singapore where contamination tolerances are measured in parts per billion.</p>
+      <p class="project-outcome">Delivered multi-million dollar projects across three continents. Earned three GE Above and Beyond Awards for exemplary customer service. Traveled 80% of the year including extended international deployments.</p>
+      <p class="project-sub-label">Referenced Projects</p>
+      <ul class="pub-list">
+        <li><em>Building for the Future with the Power of 3D NAND</em> — Micron Fab 10x Singapore</li>
+        <li><a href="https://www.watercanada.net/canadian-oil-refinery-to-reuse-100-per-cent-of-water-with-ges-wastewater-treatment-technology/" target="_blank" rel="noopener">Canadian Oil Refinery to Reuse 100% of Water with GE's Wastewater Treatment Technology</a> — FCL Regina, Saskatchewan</li>
+        <li><em>Riverside: Wastewater Plant Getting $240.8 Million Upgrade</em> — Riverside Water Quality Control Plant</li>
+      </ul>
+    </div>
+
+  </div>
+
+</main>
+
+{{FOOTER}}
+
+<script>
+  const nav = document.getElementById('main-nav');
+  const hero = document.querySelector('.portfolio-hero');
+  if (nav && hero) {
+    const observer = new IntersectionObserver(([e]) => {
+      nav.classList.toggle('nav-overlay', e.isIntersecting);
+    }, { threshold: 0.1 });
+    observer.observe(hero);
+  }
+</script>
+
+</body>
+</html>

@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Katie Heinemann — Aerospace Engineer, MPH</title>
+  <meta name="description" content="Katie Heinemann is an Aerospace Engineer and Software Engineer with a passion for spaceflight, intelligent software, and human health." />
+  <link rel="canonical" href="https://www.katieheinemann.space/" />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://www.katieheinemann.space/" />
+  <meta property="og:title" content="Katie Heinemann — Aerospace Engineer, MPH" />
+  <meta property="og:description" content="Aerospace Engineer and Software Engineer with a passion for spaceflight, intelligent software, and human health." />
+  <meta property="og:image" content="https://www.katieheinemann.space/img/katie-nbl.webp" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Katie Heinemann — Aerospace Engineer, MPH" />
+  <meta name="twitter:description" content="Aerospace Engineer and Software Engineer with a passion for spaceflight, intelligent software, and human health." />
+  <meta name="twitter:image" content="https://www.katieheinemann.space/img/katie-nbl.webp" />
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Katie Heinemann",
+    "url": "https://www.katieheinemann.space",
+    "image": "https://www.katieheinemann.space/img/katie-nbl.webp",
+    "jobTitle": "Aerospace Engineer & Software Engineer",
+    "sameAs": [
+      "https://linkedin.com/in/katie-heinemann/",
+      "https://github.com/rocketsciencenerd",
+      "https://scholar.google.com/citations?user=VS_Ud0sAAAAJ&hl=en"
+    ],
+    "alumniOf": [
+      { "@type": "CollegeOrUniversity", "name": "Johns Hopkins Bloomberg School of Public Health" },
+      { "@type": "CollegeOrUniversity", "name": "University of Minnesota Twin Cities" }
+    ],
+    "worksFor": [{ "@type": "Organization", "name": "NASA Johnson Space Center" }]
+  }
+  </script>
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+
+{{NAV}}
+
+<main>
+
+  <section class="hero-home" style="background-image: url('img/astronaut-hero.jpg');">
+    <div class="hero-home-content">
+      <h1>Hi, I'm<br>Katie Heinemann</h1>
+      <p class="hero-sub">Aerospace Engineer &amp; Software Engineer with a passion for spaceflight, intelligent software, and human health.</p>
+    </div>
+  </section>
+
+  <div class="about-grid">
+    <div class="about-text">
+      <h2 class="section-heading">An Engineer<br>on a Mission.</h2>
+      <p>I build software for extreme environments — biometric IoT devices inside NASA EVA suits, AI platforms for regulated enterprise markets, and public health infrastructure serving CDC and NIH.</p>
+      <p>During the first 90 days of the pandemic I served as Planning Chief of the Johns Hopkins COVID-19 Command Center, coordinating a 600-person volunteer network that produced 16,000+ face shields for ICU frontline workers.</p>
+      <p>Before software, I commissioned water treatment plants across three continents for GE Power — from a $240.8M municipal upgrade in California to ultra-pure water systems for Micron's semiconductor fab in Singapore.</p>
+      <p style="margin-top:2rem;"><a href="contact.html" class="btn">Get in Touch</a></p>
+    </div>
+    <div class="about-img-wrapper">
+      <img src="img/katie-nbl.webp" alt="Katie Heinemann on the pool deck of the Neutral Buoyancy Lab" />
+      <p class="caption">On the pool deck of the NBL!</p>
+    </div>
+  </div>
+
+  <div class="section-full" style="border-top: 1px solid #e0e0e0; padding: 0;">
+    <div style="max-width: var(--max-width); margin: 0 auto; padding: 3vw var(--page-padding) 0; ">
+      <h2 class="section-heading">What I Do</h2>
+    </div>
+    <div class="highlights-grid" style="max-width: var(--max-width); margin: 0 auto; padding: 0 var(--page-padding);">
+      <div class="highlight-item">
+        <h3>NASA &amp; Spaceflight</h3>
+        <p>Built the biometric IoT platform used to monitor astronauts in EVA suits at the NBL. Data co-author on publications shaping Artemis EVA planning. NASA Software of the Year honorable mention.</p>
+      </div>
+      <div class="highlight-item">
+        <h3>DevSecOps &amp; AI</h3>
+        <p>Unified LLM layer integrating 7 AI providers. SOC 2 Type I + II in 6 months. EKS disaster recovery with no downtime window. CI/CD re-architecture cutting build costs 50%.</p>
+      </div>
+      <div class="highlight-item">
+        <h3>Public Health</h3>
+        <p>Wastewater epidemiology at Biobot Analytics serving CDC and NIH. Planning Chief of the JHU COVID-19 Command Center — 16,000+ face shields in 90 days.</p>
+      </div>
+      <div class="highlight-item">
+        <h3>Water Infrastructure</h3>
+        <p>Commissioned water treatment plants across three continents — a $240.8M municipal upgrade, Micron's Singapore semiconductor fab, and Fortune 500 industrial facilities.</p>
+      </div>
+      <div class="highlight-item">
+        <h3>Education</h3>
+        <p>BS Aerospace Engineering &amp; Mechanics (UMN), MPH Johns Hopkins, Executive Space Course (ISU). 2024 University of Minnesota On The Rise Alumni Leader Award.</p>
+      </div>
+      <div class="highlight-item">
+        <h3>Giving Back</h3>
+        <p>Offering web development and software services to nonprofits and socially-conscious organizations at reduced or pro bono rates.</p>
+      </div>
+    </div>
+  </div>
+
+</main>
+
+{{FOOTER}}
+
+<script>
+  // Switch nav from overlay to solid white when scrolled past hero
+  const nav = document.getElementById('main-nav');
+  const hero = document.querySelector('.hero-home');
+  if (nav && hero) {
+    const observer = new IntersectionObserver(([e]) => {
+      nav.classList.toggle('nav-overlay', e.isIntersecting);
+    }, { threshold: 0.1 });
+    observer.observe(hero);
+  }
+</script>
+
+</body>
+</html>
