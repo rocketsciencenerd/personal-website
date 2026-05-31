@@ -23,6 +23,134 @@
   <link rel="stylesheet" href="css/style.css" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <style>
+    .project {
+      background: var(--bg);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 2.25rem;
+      margin-bottom: 2rem;
+    }
+
+    .project-header {
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+      gap: 1.5rem;
+      margin-bottom: 1rem;
+      flex-wrap: wrap;
+    }
+
+    .project-header-left h2 {
+      font-size: 1.35rem;
+      font-weight: 800;
+      color: var(--navy);
+      margin-bottom: 0.2rem;
+      line-height: 1.25;
+    }
+
+    .project-header-left .org {
+      font-size: 0.9rem;
+      font-weight: 600;
+      color: var(--blue);
+    }
+
+    .project p {
+      font-size: 0.97rem;
+      color: var(--text);
+      line-height: 1.75;
+      margin-bottom: 1rem;
+    }
+
+    .project p:last-child { margin-bottom: 0; }
+
+    .project-section-label {
+      font-size: 0.75rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      color: var(--text-light);
+      margin: 1.25rem 0 0.5rem;
+    }
+
+    .outcome-box {
+      background: var(--blue-light);
+      border-left: 3px solid var(--blue);
+      border-radius: 0 6px 6px 0;
+      padding: 0.9rem 1.1rem;
+      margin: 1rem 0;
+      font-size: 0.95rem;
+      color: var(--navy);
+      line-height: 1.65;
+    }
+
+    .pub-list {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+
+    .pub-list li {
+      font-size: 0.88rem;
+      color: var(--text);
+      line-height: 1.55;
+      padding: 0.4rem 0;
+      border-bottom: 1px solid var(--border);
+      display: flex;
+      gap: 0.5rem;
+    }
+
+    .pub-list li:last-child { border-bottom: none; }
+
+    .pub-list li::before {
+      content: '→';
+      color: var(--blue);
+      flex-shrink: 0;
+      font-weight: 700;
+    }
+
+    .pub-list a {
+      color: var(--blue);
+    }
+
+    .recognition-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+      gap: 1rem;
+      margin-top: 1.5rem;
+    }
+
+    .recognition-card {
+      background: var(--bg);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 1.25rem;
+      display: flex;
+      gap: 0.9rem;
+      align-items: flex-start;
+    }
+
+    .recognition-icon {
+      font-size: 1.5rem;
+      flex-shrink: 0;
+      line-height: 1;
+    }
+
+    .recognition-card h3 {
+      font-size: 0.92rem;
+      font-weight: 700;
+      color: var(--navy);
+      margin-bottom: 0.2rem;
+      line-height: 1.3;
+    }
+
+    .recognition-card p {
+      font-size: 0.82rem;
+      color: var(--text-light);
+      line-height: 1.45;
+      margin: 0;
+    }
+  </style>
 </head>
 <body>
 
@@ -53,97 +181,181 @@
 
 <main>
 
-  <header class="page-hero">
+  <header class="page-hero" style="
+    background-image: linear-gradient(to right, rgba(10,22,40,0.92) 40%, rgba(10,22,40,0.6) 100%), url('img/portfolio-hero.png');
+    background-size: cover;
+    background-position: center;
+    padding: 80px 2rem 70px;
+  ">
     <div class="page-hero-inner">
       <h1>Portfolio</h1>
       <p>Selected projects across aerospace, software engineering, public health, and infrastructure.</p>
     </div>
   </header>
 
-  <section class="section">
+  <!-- RECOGNITION -->
+  <section class="section section-alt">
     <div class="container">
-      <p class="section-label">Software &amp; Engineering</p>
-      <h2 class="section-title">Software Projects</h2>
-      <p class="section-subtitle">Full-stack applications, DevSecOps platforms, and human performance tools.</p>
-
-      <div class="portfolio-grid">
-
-        <div class="portfolio-card">
-          <span class="portfolio-tag tag-software">Software Engineering</span>
-          <h3>Violet Platform</h3>
-          <p class="role">Senior Software Engineer &amp; Security/Compliance Lead</p>
-          <p>Harmonize your software stack and supercharge your hardware team. Led security and compliance initiatives as a senior engineer at Violet Labs, building tools that bridge software and hardware development workflows.</p>
+      <p class="section-label">Selected Recognition</p>
+      <h2 class="section-title">Awards &amp; Honors</h2>
+      <div class="recognition-grid">
+        <div class="recognition-card">
+          <span class="recognition-icon">🏆</span>
+          <div>
+            <h3>NASA Software of the Year — Honorable Mention</h3>
+            <p>Maestro Flight Procedure Tracking Application</p>
+          </div>
         </div>
-
-        <div class="portfolio-card">
-          <span class="portfolio-tag tag-health">Public Health Tech</span>
-          <h3>Biobot</h3>
-          <p class="role">Senior Software Engineer</p>
-          <p>Wastewater epidemiology software enabling intelligent public health monitoring. Built systems that detect disease outbreaks and track community health trends through wastewater analysis at scale.</p>
+        <div class="recognition-card">
+          <span class="recognition-icon">🎓</span>
+          <div>
+            <h3><a href="https://www.minnesotaalumni.org/stories/rising-alumni" target="_blank" rel="noopener">2024 On The Rise Alumni Leader Award</a></h3>
+            <p>University of Minnesota</p>
+          </div>
         </div>
-
-        <div class="portfolio-card">
-          <span class="portfolio-tag tag-nasa">NASA / Aerospace</span>
-          <h3>NASA Johnson Space Center</h3>
-          <p class="role">Human Performance Engineer — H-3PO Lab</p>
-          <p>Flight control and ground science support systems enhancing team operations. Developed cloud-based software for the HERA (Human Exploration Research Analog) project studying long-duration spaceflight team performance.</p>
+        <div class="recognition-card">
+          <span class="recognition-icon">🔒</span>
+          <div>
+            <h3>CompTIA Security+</h3>
+            <p>Certified security practitioner</p>
+          </div>
         </div>
-
-        <div class="portfolio-card">
-          <span class="portfolio-tag tag-health">Emergency Management</span>
-          <h3>Johns Hopkins COVID-19 Command Center</h3>
-          <p class="role">Emergency Management Specialist</p>
-          <p>Emergency coordination leveraging 3D printing for PPE production during the COVID-19 pandemic. Served on the Johns Hopkins Unified Incident Command planning team during the crisis response.</p>
+        <div class="recognition-card">
+          <span class="recognition-icon">⭐</span>
+          <div>
+            <h3>3× GE Above and Beyond Award</h3>
+            <p>Exemplary customer service across global commissioning deployments</p>
+          </div>
         </div>
-
-        <div class="portfolio-card">
-          <span class="portfolio-tag tag-health">Health Informatics</span>
-          <h3>RADAR-BASE</h3>
-          <p class="role">Johns Hopkins PICU</p>
-          <p>Passive data collection improvement system for the Johns Hopkins Pediatric ICU. Enhanced the RADAR-BASE platform to improve data quality and reduce manual burden on clinical staff.</p>
-        </div>
-
-        <div class="portfolio-card">
-          <span class="portfolio-tag tag-software">Software Engineering</span>
-          <h3>Modus Engagement Platform</h3>
-          <p class="role">Full-Stack Software Engineer</p>
-          <p>Interactive sales tools including virtual product demonstrations and a microlearning React application. Built engaging front-end experiences to help sales teams communicate complex products effectively.</p>
-        </div>
-
       </div>
     </div>
   </section>
 
-  <section class="section section-alt">
+  <!-- PROJECTS -->
+  <section class="section">
     <div class="container">
-      <p class="section-label">Infrastructure &amp; Commissioning</p>
-      <h2 class="section-title">Infrastructure Projects</h2>
-      <p class="section-subtitle">Water treatment plant startups and commissioning engineering across three continents.</p>
+      <p class="section-label">Projects</p>
+      <h2 class="section-title" style="margin-bottom: 2rem;">Selected Work</h2>
 
-      <div class="portfolio-grid">
-
-        <div class="portfolio-card">
-          <span class="portfolio-tag tag-infra">Water Infrastructure</span>
-          <h3>GE Power Micron NAND — Singapore</h3>
-          <p class="role">Field Services Commissioning Engineer</p>
-          <p>Water plant commissioning engineering for Micron's NAND semiconductor fabrication facility in Singapore. Led the startup and commissioning of critical ultra-pure water systems supporting advanced chip manufacturing.</p>
+      <!-- PROJECT 1 -->
+      <div class="project">
+        <div class="project-header">
+          <div class="project-header-left">
+            <h2>Human Performance IoT Platform</h2>
+            <span class="org">NASA Johnson Space Center — EEPL (contract)</span>
+          </div>
+          <span class="portfolio-tag tag-nasa" style="margin:0;">NASA / Aerospace</span>
         </div>
 
-        <div class="portfolio-card">
-          <span class="portfolio-tag tag-infra">Water Infrastructure</span>
-          <h3>Riverside, CA Wastewater Treatment</h3>
-          <p class="role">Water Engineering Leadership Program</p>
-          <p>$240.8 million wastewater treatment plant upgrade project leadership. Managed the commissioning process for one of the largest wastewater infrastructure investments in Southern California.</p>
+        <p>Designed and built a fleet of biometric IoT devices monitoring heart rate, core body temperature, and CO₂ within EVA suits across hostile field environments — the Neutral Buoyancy Lab (underwater, behind a DMZ, at the end of a signal-extended ethernet run), ARGOS, and DRATS analog deployments. Solved hard embedded problems: making a Bluetooth HRM work underwater, navigating network DMZs, architecting an MQTT pipeline on AWS IoT Core, and migrating to Greengrass for OTA reliability. Devices write locally for resilience, stream in parallel, and authenticate with IoT keys.</p>
+
+        <div class="outcome-box">
+          Created a 6-year longitudinal biometric dataset used by NASA flight surgeons, researchers, and mission planners. Contributed as systems and data co-author across multiple peer-reviewed publications spanning ISS EVA metabolic modeling, Artemis EVA planning, core body temperature prediction, and lunar surface simulation. Data from this platform is actively shaping how NASA plans and executes human spaceflight.
         </div>
 
-        <div class="portfolio-card">
-          <span class="portfolio-tag tag-infra">Water Infrastructure</span>
-          <h3>Coca-Cola Dunedin, FL</h3>
-          <p class="role">Field Services Commissioning Engineer</p>
-          <p>Wastewater system upgrade commissioning for Coca-Cola's Dunedin, Florida production facility. Ensured the upgraded systems met production and environmental compliance requirements from day one.</p>
-        </div>
-
+        <p class="project-section-label">Publications &amp; Documentation</p>
+        <ul class="pub-list">
+          <li><a href="https://www.nasa.gov/reference/jsc-human-factors-performance/" target="_blank" rel="noopener">NASA JSC Human Factors &amp; Performance Lab (EEPL)</a></li>
+          <li><a href="https://ntrs.nasa.gov/citations/20220007371" target="_blank" rel="noopener">NASA Technical Report — NTRS</a></li>
+          <li><em>Human Thermal Analysis of Traverse and Geology Tasks During Simulated Lunar EVA</em> — 2023 IEEE Aerospace Conference</li>
+          <li><em>Supporting Exploration Missions by Enabling Exploration Mission System Software (ICES-2023-242)</em> — International Conference on Environmental Systems</li>
+          <li><em>Novel Approaches to Metabolic Consumption Modeling During ISS EVA Planning</em> — 13th Annual ISS R&amp;D Conference (2024)</li>
+          <li><em>Core Body Temperature Predictions Using Metabolic Energy Expenditure and Heart Rate During Simulated EVA</em> — ICES 2024</li>
+          <li><em>EVA Mission Systems Software (EMSS): How Software Systems are Supporting Science and Operations in the Planning and Execution of Artemis EVAs</em> — Artemis Science Team Face to Face (2024)</li>
+          <li><em>Helmet Mounted Display Technology for EVA Training in NASA's Neutral Buoyancy Lab</em> — 2023 NASA Human Research Program Investigators' Workshop</li>
+          <li><em>Cross-Analog Validity Evidence for Unobtrusive Measurement Strategies for Individual and Team Competencies</em> — NASA HRP Investigators' Workshop (2020)</li>
+        </ul>
       </div>
+
+      <!-- PROJECT 2 -->
+      <div class="project">
+        <div class="project-header">
+          <div class="project-header-left">
+            <h2>AI Platform, Compliance &amp; Enterprise Sales</h2>
+            <span class="org"><a href="https://www.violetlabs.com/" target="_blank" rel="noopener">Violet Labs</a> (seed-stage)</span>
+          </div>
+          <span class="portfolio-tag tag-software" style="margin:0;">Software Engineering</span>
+        </div>
+
+        <p>On a 3-person engineering team, built the customer-facing unified LLM provider layer integrating 7 providers (Claude, OpenAI, Bedrock, Gemini, Vertex, Groq, Azure Foundry) behind a single tool-calling interface — architected as bring-your-own-model to keep sensitive customer data out of Violet's processing agreements, enabling sales into healthcare, defense, and aerospace. Powered both the in-product agentic chat (engineers querying their hardware data in natural language) and a public MCP server giving AI clients (Claude, ChatGPT, Cursor, GitHub Copilot, Microsoft Copilot, Windsurf) secure, permission-scoped access to structured Violet workspace data. Owned the edge deployment architecture for HIPAA/FedRAMP customers. Led SOC 2 Type I + II from zero — audit-ready in 3 months, certified in 6. Re-architected CI/CD on GitHub Actions cutting build costs and deploy times by 50%.</p>
+
+        <p>Beyond engineering: identified that Emory University's NIH-funded cystic fibrosis research team had a data platform with no frontend — recognized the product fit, packaged the edge deployment to meet their HIPAA requirements, and pitched the CEO and CTO to pursue the deal. Closed a <strong>$10K/month contract</strong> at a company where existing contracts were <strong>$10K/year</strong> — a 12× larger deal that became the company's largest account.</p>
+
+        <div class="outcome-box">
+          Opened healthcare as a net-new vertical, set a new commercial ceiling for the company, and delivered the compliance and AI infrastructure required to sell into regulated enterprise markets.
+        </div>
+
+        <p class="project-section-label">Documentation</p>
+        <ul class="pub-list">
+          <li><a href="https://docs.violetlabs.com/ai/mcp" target="_blank" rel="noopener">Violet MCP Server — Public Documentation</a></li>
+          <li><a href="https://reporter.nih.gov/search/TxNs2nZMUEyDRdoywNGcCw/project-details/10781129" target="_blank" rel="noopener">NIH Grant — Emory University Cystic Fibrosis Data Warehouse ($1M)</a></li>
+        </ul>
+      </div>
+
+      <!-- PROJECT 3 -->
+      <div class="project">
+        <div class="project-header">
+          <div class="project-header-left">
+            <h2>COVID-19 Crisis Response</h2>
+            <span class="org">Johns Hopkins Hospital System</span>
+          </div>
+          <span class="portfolio-tag tag-health" style="margin:0;">Emergency Management</span>
+        </div>
+
+        <p>Served as Planning Chief of the Unified COVID-19 Command Center during the first 90 days of the pandemic, when PPE was being rationed nationally. Partnered with NASA APL to complete a face shield design, then coordinated a campus-wide distributed 3D printing operation — mapping and unifying every available printer on campus through existing networks, and securing a $10K grant to fund materials. Built a 600+ person volunteer network from zero to staff logistics, assembly, data collection, and phone banks.</p>
+
+        <div class="outcome-box">
+          Produced 16,000+ face shields and ear-saver clips delivered to ICU and ED frontline workers during the peak of the shortage. Launched the COVID Data team to surface response trends and drive corrective action across the command center — all executed in under 3 months.
+        </div>
+
+        <p class="project-section-label">Press &amp; Coverage</p>
+        <ul class="pub-list">
+          <li><a href="https://www.bme.jhu.edu/news-events/news/students-organize-efforts-to-3-d-print-ppe-for-the-johns-hopkins-hospital/" target="_blank" rel="noopener">Students Organize Efforts to 3D Print PPE for Johns Hopkins Hospital</a> — Johns Hopkins BME</li>
+          <li><a href="https://madison.com/opinion/column/katie-heinemann-and-benjamin-bigelow-covid-19-our-generations-call-to-arms/article_2b334edf-e536-5690-9ce4-793545df706e.html" target="_blank" rel="noopener">COVID-19: Our Generation's Call to Arms</a> — Madison.com (co-authored)</li>
+        </ul>
+      </div>
+
+      <!-- PROJECT 4 -->
+      <div class="project">
+        <div class="project-header">
+          <div class="project-header-left">
+            <h2>Emergency Infrastructure Recovery</h2>
+            <span class="org"><a href="https://biobot.io/" target="_blank" rel="noopener">Biobot Analytics</a> (Series A)</span>
+          </div>
+          <span class="portfolio-tag tag-software" style="margin:0;">Software Engineering</span>
+        </div>
+
+        <p>When Biobot's production EKS cluster — the backbone of a public health surveillance platform serving CDC, NIH, and state health departments — failed over a weekend after an untriggered Kubernetes update, immediately diagnosed the failure and put an ECS migration into motion. The cluster had been console-provisioned by a departed contractor with no IaC, no documentation, and no runbook. Designed the replacement Terraform-managed ECS Fargate architecture from scratch under pressure: networking, IAM, task definitions, and CI/CD pipelines — then executed the cutover.</p>
+
+        <div class="outcome-box">
+          Restored a production public health platform with no planned downtime window, replacing an irreproducible undocumented cluster with infrastructure that could be maintained, audited, and scaled.
+        </div>
+      </div>
+
+      <!-- PROJECT 5 -->
+      <div class="project">
+        <div class="project-header">
+          <div class="project-header-left">
+            <h2>Global Water Infrastructure Commissioning</h2>
+            <span class="org">GE Power — Water Engineering Leadership Program</span>
+          </div>
+          <span class="portfolio-tag tag-infra" style="margin:0;">Infrastructure</span>
+        </div>
+
+        <p>On-site engineer and sole GE representative for the commissioning of multi-million dollar water treatment facilities worldwide — writing and debugging mission-critical machine controls code (RSLogix, FactoryTalk, Modicon, Wonderware) directly on customer sites as the primary technical contact between GE, the customer, and vendors. Projects spanned municipal wastewater, industrial wastewater, drinking water, and ultra-pure water across a marquee customer list including <strong>Micron, Intel, Coca-Cola</strong>, and municipal systems — including a <strong>$240.8M upgrade</strong> to Riverside's Water Quality Control Plant (31 million gallons/day serving 320,000 people) as sole on-site engineer, and an extended deployment on the Micron Fab 10x semiconductor fabrication facility in Singapore requiring ultra-pure water systems where contamination tolerances are measured in parts per billion.</p>
+
+        <div class="outcome-box">
+          Delivered multi-million dollar projects across three continents for Fortune 500 and municipal customers. Earned three GE Above and Beyond Awards for exemplary customer service. Traveled 80% of the year including extended international deployments.
+        </div>
+
+        <p class="project-section-label">Referenced Projects</p>
+        <ul class="pub-list">
+          <li><em>Building for the Future with the Power of 3D NAND</em> — Micron Fab 10x Singapore</li>
+          <li><a href="https://www.watercanada.net/canadian-oil-refinery-to-reuse-100-per-cent-of-water-with-ges-wastewater-treatment-technology/" target="_blank" rel="noopener">Canadian Oil Refinery to Reuse 100% of Water with GE's Wastewater Treatment Technology</a> — FCL Regina, Saskatchewan</li>
+          <li><em>Riverside: Wastewater Plant Getting $240.8 Million Upgrade</em> — Riverside Water Quality Control Plant</li>
+        </ul>
+      </div>
+
     </div>
   </section>
 
@@ -151,7 +363,7 @@
 
 <footer>
   <div class="footer-inner">
-    <span class="footer-copy">©December 2025 Katie Heinemann</span>
+    <span class="footer-copy">©June 2026 Katie Heinemann</span>
     <ul class="nav-links">
       <li><a href="index.html">Home</a></li>
       <li><a href="portfolio.html">Portfolio</a></li>
