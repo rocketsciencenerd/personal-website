@@ -138,6 +138,7 @@ nav.nav-overlay .hamburger {
   background: none;
   border: none;
   padding: 4px;
+  color: var(--black);
 }
 
 .hamburger span {
