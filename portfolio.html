@@ -47,7 +47,8 @@
 
 <main>
 
-  <div class="portfolio-hero" style="background-image: url('img/portfolio-hero.png');">
+  <div class="portfolio-hero">
+    <div class="hero-bg" style="background-image: url('img/portfolio-hero.png');"></div>
     <h1>Portfolio</h1>
   </div>
 
@@ -170,11 +171,18 @@
 <script>
   const nav = document.getElementById('main-nav');
   const hero = document.querySelector('.portfolio-hero');
+  const heroBg = hero && hero.querySelector('.hero-bg');
   if (nav && hero) {
     const observer = new IntersectionObserver(([e]) => {
       nav.classList.toggle('nav-overlay', e.isIntersecting);
     }, { threshold: 0.1 });
     observer.observe(hero);
+  }
+  if (heroBg) {
+    window.addEventListener('scroll', () => {
+      const progress = Math.min(window.scrollY / hero.offsetHeight, 1);
+      heroBg.style.transform = `scale(${1 + progress * 0.12})`;
+    }, { passive: true });
   }
 </script>
 

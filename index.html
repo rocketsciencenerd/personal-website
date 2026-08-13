@@ -67,7 +67,8 @@
 
 <main>
 
-  <section class="hero-home" style="background-image: url('img/astronaut-hero.jpg');">
+  <section class="hero-home">
+    <div class="hero-bg" style="background-image: url('img/astronaut-hero.jpg'); background-position: center top;"></div>
     <div class="hero-home-content">
       <h1>Hi, I'm<br>Katie Heinemann</h1>
       <p class="hero-sub">Aerospace Engineer combining engineering and public health to serve the spaceflight community and advance human wellbeing back here on Earth.</p>
@@ -156,11 +157,18 @@
   // Switch nav from overlay to solid white when scrolled past hero
   const nav = document.getElementById('main-nav');
   const hero = document.querySelector('.hero-home');
+  const heroBg = hero && hero.querySelector('.hero-bg');
   if (nav && hero) {
     const observer = new IntersectionObserver(([e]) => {
       nav.classList.toggle('nav-overlay', e.isIntersecting);
     }, { threshold: 0.1 });
     observer.observe(hero);
+  }
+  if (heroBg) {
+    window.addEventListener('scroll', () => {
+      const progress = Math.min(window.scrollY / hero.offsetHeight, 1);
+      heroBg.style.transform = `scale(${1 + progress * 0.12})`;
+    }, { passive: true });
   }
 </script>
 

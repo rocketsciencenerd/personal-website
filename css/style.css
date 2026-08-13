@@ -155,10 +155,29 @@ nav.nav-overlay .hamburger {
   width: 100%;
   min-height: 65vh;
   background: var(--black);
-  background-size: cover;
-  background-position: center;
   display: flex;
   align-items: center;
+  overflow: hidden;
+}
+
+.hero-bg {
+  position: absolute;
+  inset: 0;
+  background-size: cover;
+  background-position: center;
+  will-change: transform;
+  z-index: 0;
+}
+
+/* Dark scrim for text readability */
+.hero-home::before,
+.hero-full::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.42);
+  z-index: 1;
+  pointer-events: none;
 }
 
 /* Offset top padding so content clears the absolute nav */
@@ -198,12 +217,11 @@ nav.nav-overlay .hamburger {
   width: 100%;
   min-height: 80vh;
   background-color: var(--black);
-  background-size: cover;
-  background-position: center top;
   display: flex;
   align-items: flex-end;
   padding-bottom: 6vw;
-  padding-top: 60px; /* nav height */
+  padding-top: 60px;
+  overflow: hidden;
 }
 
 .hero-home-content {
@@ -388,11 +406,10 @@ h1, h2, .display {
   width: 100%;
   min-height: 50vh;
   background: var(--black);
-  background-size: cover;
-  background-position: center;
   display: flex;
   align-items: flex-end;
   padding: 60px var(--page-padding) 4vw;
+  overflow: hidden;
 }
 
 .portfolio-hero h1 {
@@ -412,6 +429,8 @@ h1, h2, .display {
   position: absolute;
   inset: 0;
   background: linear-gradient(to top, rgba(0,0,0,0.7) 0%, rgba(0,0,0,0.2) 60%, rgba(0,0,0,0.4) 100%);
+  z-index: 1;
+  pointer-events: none;
 }
 
 .project-block {

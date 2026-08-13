@@ -24,7 +24,8 @@
 <main>
 
   <!-- Full-bleed Amelia Earhart hero with quote overlay -->
-  <section class="hero-full" style="background-image: url('img/amelia-earhart.png'); background-position: center top; min-height: 60vh;">
+  <section class="hero-full" style="min-height: 60vh;">
+    <div class="hero-bg" style="background-image: url('img/amelia-earhart.png'); background-position: center top;"></div>
     <div class="hero-overlay-content">
       <p class="hero-quote">Better to do a Good Deed Near at Home than go far away to burn incense.</p>
       <p class="hero-attribution">Amelia Earhart</p>
@@ -46,11 +47,18 @@
 <script>
   const nav = document.getElementById('main-nav');
   const hero = document.querySelector('.hero-full');
+  const heroBg = hero && hero.querySelector('.hero-bg');
   if (nav && hero) {
     const observer = new IntersectionObserver(([e]) => {
       nav.classList.toggle('nav-overlay', e.isIntersecting);
     }, { threshold: 0.1 });
     observer.observe(hero);
+  }
+  if (heroBg) {
+    window.addEventListener('scroll', () => {
+      const progress = Math.min(window.scrollY / hero.offsetHeight, 1);
+      heroBg.style.transform = `scale(${1 + progress * 0.12})`;
+    }, { passive: true });
   }
 </script>
 
