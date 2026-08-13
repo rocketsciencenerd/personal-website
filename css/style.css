@@ -39,14 +39,13 @@ nav {
   position: sticky;
   top: 0;
   z-index: 200;
+  transition: background 0.25s, border-color 0.25s;
 }
 
-/* On pages with a hero overlay, nav is transparent with white text */
+/* On pages with a hero overlay, nav stays sticky but turns transparent */
 nav.nav-overlay {
-  position: absolute;
-  top: 0; left: 0; right: 0;
   background: transparent;
-  border-bottom: none;
+  border-bottom-color: transparent;
 }
 
 nav.nav-overlay .nav-brand,
@@ -158,6 +157,8 @@ nav.nav-overlay .hamburger {
   display: flex;
   align-items: center;
   overflow: hidden;
+  margin-top: -60px;
+  padding-top: 60px;
 }
 
 .hero-bg {
@@ -180,10 +181,6 @@ nav.nav-overlay .hamburger {
   pointer-events: none;
 }
 
-/* Offset top padding so content clears the absolute nav */
-.has-overlay-nav .hero-full {
-  padding-top: 60px;
-}
 
 .hero-overlay-content {
   position: relative;
@@ -222,6 +219,7 @@ nav.nav-overlay .hamburger {
   padding-bottom: 6vw;
   padding-top: 60px;
   overflow: hidden;
+  margin-top: -60px;
 }
 
 .hero-home-content {
@@ -409,6 +407,7 @@ h1, h2, .display {
   display: flex;
   align-items: flex-end;
   padding: 60px var(--page-padding) 4vw;
+  margin-top: -60px;
   overflow: hidden;
 }
 
