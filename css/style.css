@@ -49,7 +49,6 @@ nav.nav-overlay {
 }
 
 nav.nav-overlay .nav-brand,
-nav.nav-overlay .nav-links a,
 nav.nav-overlay .nav-icon,
 nav.nav-overlay .hamburger {
   color: var(--white);
