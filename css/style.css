@@ -1189,6 +1189,22 @@ footer {
   color: rgba(255, 255, 255, 0.6);
 }
 
+.globe-plane-standalone {
+  position: absolute;
+  font-size: 14px;
+  pointer-events: none;
+  color: rgba(255, 255, 255, 0.75);
+  text-shadow: 0 0 6px rgba(255, 255, 255, 0.5);
+  line-height: 1;
+  display: none;
+  z-index: 10;
+}
+
+.globe-plane-standalone.globe-plane--prop {
+  font-size: 11px;
+  color: rgba(255, 255, 255, 0.6);
+}
+
 @media (max-width: 768px) {
   .globe-name h1 { font-size: 2rem; }
   .globe-tagline { display: none; }

@@ -6,6 +6,7 @@ const footer = fs.readFileSync('_partials/footer.html', 'utf8');
 
 const pages = [
   { src: '_pages/index.html',       out: 'index.html',       active: 'index',       navClass: 'nav-overlay' },
+  { src: '_pages/experience.html',  out: 'experience.html',  active: 'experience',  navClass: 'nav-overlay' },
   { src: '_pages/portfolio.html',   out: 'portfolio.html',   active: 'portfolio',   navClass: 'nav-overlay' },
   { src: '_pages/resume.html',      out: 'resume.html',      active: 'resume',      navClass: '' },
   { src: '_pages/giving-back.html', out: 'giving-back.html', active: 'giving-back', navClass: 'nav-overlay' },
