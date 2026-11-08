@@ -32,93 +32,275 @@
       { "@type": "CollegeOrUniversity", "name": "Johns Hopkins Bloomberg School of Public Health" },
       { "@type": "CollegeOrUniversity", "name": "University of Minnesota Twin Cities" }
     ],
-    "worksFor": [{ "@type": "Organization", "name": "NASA Johnson Space Center" }]
+    "worksFor": [{ "@type": "Organization", "name": "Ashvin AI" }]
   }
   </script>
   <link rel="icon" type="image/svg+xml" href="favicon.svg" />
   <link rel="stylesheet" href="css/style.css" />
 </head>
-<body>
+<body class="globe-body">
 
 {{NAV}}
 
-<main>
+<main class="globe-main">
+  <div id="globe-container"></div>
 
-  <section class="hero-home">
-    <div class="hero-bg" style="background-image: url('img/astronaut-hero.jpg'); background-position: center top;"></div>
-    <div class="hero-home-content">
-      <h1>Hi, I'm<br>Katie Heinemann</h1>
-      <p class="hero-sub">Aerospace Engineer combining engineering and public health to serve the spaceflight community and advance human wellbeing back here on Earth.</p>
+  <!-- Name + hint overlay -->
+  <div class="globe-overlay">
+    <div class="globe-name">
+      <h1>Katie<br>Heinemann</h1>
     </div>
-  </section>
-
-  <div class="about-grid">
-    <div class="about-text">
-      <h2 class="section-heading">An Engineer<br>on a Mission.</h2>
-      <p>I build software for extreme environments — biometric IoT devices inside NASA EVA suits, AI platforms for regulated enterprise markets, and public health infrastructure serving CDC and NIH.</p>
-      <p>During the first 90 days of the pandemic I served as Planning Chief of the Johns Hopkins COVID-19 Command Center, coordinating a 600-person volunteer network that produced 16,000+ face shields for ICU frontline workers.</p>
-      <p>Before software, I commissioned water treatment plants across three continents for GE Power — from a $240.8M municipal upgrade in California to ultra-pure water systems for Micron's semiconductor fab in Singapore.</p>
-      <p style="margin-top:2rem;"><a href="contact.html" class="btn">Get in Touch</a></p>
-    </div>
-    <div class="about-img-wrapper">
-      <img src="img/katie-nbl.webp" alt="Katie Heinemann on the pool deck of the Neutral Buoyancy Lab" />
-      <p class="caption">On the pool deck of the NBL!</p>
-    </div>
+    <p class="globe-tagline">Aerospace · Software · Public Health</p>
+    <p class="globe-hint">spin the globe — click a location</p>
   </div>
 
-  <div class="section-full" style="border-top: 1px solid #e0e0e0; padding: 0;">
-    <div style="max-width: var(--max-width); margin: 0 auto; padding: 3vw var(--page-padding) 0; ">
-      <h2 class="section-heading">What I Do</h2>
-    </div>
-    <div class="highlights-grid" style="max-width: var(--max-width); margin: 0 auto; padding: 0 var(--page-padding);">
-      <div class="highlight-item">
-        <h3>NASA &amp; Spaceflight</h3>
-        <p>Built the biometric IoT platform used to monitor astronauts in EVA suits at the NBL. Data co-author on publications shaping Artemis EVA planning. NASA Software of the Year honorable mention.</p>
-      </div>
-      <div class="highlight-item">
-        <h3>DevSecOps &amp; AI</h3>
-        <p>Unified LLM layer integrating 7 AI providers. SOC 2 Type I + II in 6 months. EKS disaster recovery with no downtime window. CI/CD re-architecture cutting build costs 50%.</p>
-      </div>
-      <div class="highlight-item">
-        <h3>Public Health</h3>
-        <p>Wastewater epidemiology at Biobot Analytics serving CDC and NIH. Planning Chief of the JHU COVID-19 Command Center — 16,000+ face shields in 90 days.</p>
-      </div>
-      <div class="highlight-item">
-        <h3>Water Infrastructure</h3>
-        <p>Commissioned water treatment plants across three continents — a $240.8M municipal upgrade, Micron's Singapore semiconductor fab, and Fortune 500 industrial facilities.</p>
-      </div>
-      <div class="highlight-item">
-        <h3>Education</h3>
-        <p>BS Aerospace Engineering &amp; Mechanics (UMN), MPH Johns Hopkins, Executive Space Course (ISU). 2024 University of Minnesota On The Rise Alumni Leader Award.</p>
-      </div>
-      <div class="highlight-item">
-        <h3>Giving Back</h3>
-        <p>Offering web development and software services to nonprofits and socially-conscious organizations at reduced or pro bono rates.</p>
-      </div>
-    </div>
+  <!-- Social icons -->
+  <div class="globe-socials">
+    <a href="https://linkedin.com/in/katie-heinemann/" target="_blank" rel="noopener" aria-label="LinkedIn">
+      <svg viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+    </a>
+    <a href="https://github.com/rocketsciencenerd" target="_blank" rel="noopener" aria-label="GitHub">
+      <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.374 0 0 5.373 0 12c0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23A11.509 11.509 0 0112 5.803c1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576C20.566 21.797 24 17.3 24 12c0-6.627-5.373-12-12-12z"/></svg>
+    </a>
+    <a href="https://scholar.google.com/citations?user=VS_Ud0sAAAAJ&hl=en" target="_blank" rel="noopener" aria-label="Google Scholar">
+      <svg viewBox="0 0 24 24" fill="currentColor"><path d="M5.242 13.769L0 9.5 12 0l12 9.5-5.242 4.269C17.548 11.249 14.978 9.5 12 9.5c-2.977 0-5.548 1.748-6.758 4.269zM12 10a7 7 0 100 14 7 7 0 000-14z"/></svg>
+    </a>
   </div>
 
+  <!-- Location popout card -->
+  <aside id="location-popout" class="location-popout hidden" aria-hidden="true">
+    <div class="popout-header">
+      <span class="popout-coords" id="popout-coords"></span>
+      <button class="popout-close" id="popout-close" aria-label="Close">✕</button>
+    </div>
+    <div class="popout-city" id="popout-city"></div>
+    <h2 class="popout-org" id="popout-org"></h2>
+    <p class="popout-role" id="popout-role"></p>
+    <p class="popout-desc" id="popout-desc"></p>
+    <ul class="popout-bullets" id="popout-bullets"></ul>
+    <a href="#" class="popout-link" id="popout-link" style="display:none"></a>
+  </aside>
 </main>
 
 {{FOOTER}}
 
+<script src="//unpkg.com/globe.gl"></script>
 <script>
-  // Switch nav from overlay to solid white when scrolled past hero
-  const nav = document.getElementById('main-nav');
-  const hero = document.querySelector('.hero-home');
-  const heroBg = hero && hero.querySelector('.hero-bg');
-  if (nav && hero) {
-    const observer = new IntersectionObserver(([e]) => {
-      nav.classList.toggle('nav-overlay', e.isIntersecting);
-    }, { threshold: 0.1 });
-    observer.observe(hero);
+  const LOCATIONS = [
+    {
+      id: 'houston',
+      lat: 29.5593,
+      lng: -95.0892,
+      city: 'Houston, TX',
+      country: 'United States',
+      org: 'NASA Johnson Space Center',
+      role: 'Software Engineer — Spacesuit Systems',
+      desc: 'Built the biometric IoT platform used to monitor astronauts in EVA suits at the Neutral Buoyancy Lab. Co-author on publications shaping Artemis EVA planning.',
+      highlights: [
+        'NASA Software of the Year — Honorable Mention',
+        'Real-time biometric monitoring in EVA suits',
+        'Co-author on Artemis EVA planning publications'
+      ],
+      link: { label: 'View Portfolio →', href: 'portfolio.html' }
+    },
+    {
+      id: 'baltimore',
+      lat: 39.2904,
+      lng: -76.6122,
+      city: 'Baltimore, MD',
+      country: 'United States',
+      org: 'Johns Hopkins Bloomberg School of Public Health',
+      role: 'MPH · Planning Chief, COVID-19 Command Center',
+      desc: 'Earned MPH. Served as Planning Chief of the JHU COVID-19 Command Center — coordinating a 600-person volunteer network that produced 16,000+ face shields in the first 90 days of the pandemic.',
+      highlights: [
+        'MPH, Johns Hopkins Bloomberg SPH',
+        '600-person volunteer network coordinated',
+        '16,000+ face shields for ICU frontline workers'
+      ],
+      link: null
+    },
+    {
+      id: 'boston',
+      lat: 42.3601,
+      lng: -71.0589,
+      city: 'Boston, MA',
+      country: 'United States',
+      org: 'Ashvin AI · Biobot Analytics',
+      role: 'AI Engineering · Wastewater Epidemiology',
+      desc: 'AI platform engineering at Ashvin AI. Wastewater epidemiology at Biobot Analytics serving CDC and NIH with national-scale disease surveillance.',
+      highlights: [
+        'Ashvin AI — Aug 2026–Present',
+        'Unified LLM layer integrating 7 AI providers',
+        'SOC 2 Type I + II certified in 6 months',
+        'Biobot Analytics — wastewater surveillance for CDC & NIH'
+      ],
+      link: { label: 'View Portfolio →', href: 'portfolio.html' }
+    },
+    {
+      id: 'minneapolis',
+      lat: 44.9778,
+      lng: -93.2650,
+      city: 'Minneapolis, MN',
+      country: 'United States',
+      org: 'University of Minnesota Twin Cities',
+      role: 'BS Aerospace Engineering & Mechanics',
+      desc: 'Earned BS in Aerospace Engineering & Mechanics. Recognized as a 2024 University of Minnesota On The Rise Alumni Leader.',
+      highlights: [
+        'BS Aerospace Engineering & Mechanics',
+        '2024 On The Rise Alumni Leader Award'
+      ],
+      link: null
+    },
+    {
+      id: 'singapore',
+      lat: 1.3521,
+      lng: 103.8198,
+      city: 'Singapore',
+      country: 'Singapore',
+      org: 'Micron Technology · GE Power',
+      role: 'Water Infrastructure Engineer',
+      desc: 'Commissioned ultra-pure water treatment systems for Micron\'s semiconductor fabrication facility — critical infrastructure for chip manufacturing at scale.',
+      highlights: [
+        'Ultra-pure water systems for semiconductor fab',
+        'GE Power infrastructure across three continents'
+      ],
+      link: null
+    },
+    {
+      id: 'riverside',
+      lat: 33.9533,
+      lng: -117.3961,
+      city: 'Riverside, CA',
+      country: 'United States',
+      org: 'GE Power',
+      role: 'Water Infrastructure Engineer',
+      desc: 'Led commissioning of a $240.8M municipal water treatment plant upgrade — one of the largest water infrastructure projects in the region.',
+      highlights: [
+        '$240.8M municipal water treatment upgrade',
+        'Large-scale civil infrastructure commissioning'
+      ],
+      link: null
+    },
+    {
+      id: 'strasbourg',
+      lat: 48.5734,
+      lng: 7.7521,
+      city: 'Strasbourg, France',
+      country: 'France',
+      org: 'International Space University',
+      role: 'Executive Space Course',
+      desc: 'Completed the Executive Space Course (ISU) — an intensive interdisciplinary program bringing together space professionals from around the world.',
+      highlights: [
+        'Executive Space Course (ISU)',
+        'Interdisciplinary space education program'
+      ],
+      link: null
+    },
+    {
+      id: 'vienna',
+      lat: 48.2082,
+      lng: 16.3738,
+      city: 'Vienna, Austria',
+      country: 'Austria',
+      org: 'United Nations Office for Outer Space Affairs',
+      role: 'World Space Forum 2024',
+      desc: 'Participated in the United Nations World Space Forum 2024 — a global forum on space policy, sustainable development, and international cooperation.',
+      highlights: [
+        'UN World Space Forum 2024',
+        'International space governance & policy'
+      ],
+      link: null
+    }
+  ];
+
+  function formatCoords(lat, lng) {
+    const latDir = lat >= 0 ? 'N' : 'S';
+    const lngDir = lng >= 0 ? 'E' : 'W';
+    return `${Math.abs(lat).toFixed(1)}°${latDir}  ${Math.abs(lng).toFixed(1)}°${lngDir}`;
   }
-  if (heroBg) {
-    window.addEventListener('scroll', () => {
-      const progress = Math.min(window.scrollY / hero.offsetHeight, 1);
-      heroBg.style.transform = `scale(${1 + progress * 0.12})`;
-    }, { passive: true });
+
+  const popoutEl   = document.getElementById('location-popout');
+  const closeBtn   = document.getElementById('popout-close');
+
+  function showPopout(loc) {
+    document.getElementById('popout-coords').textContent = formatCoords(loc.lat, loc.lng);
+    document.getElementById('popout-city').textContent   = `${loc.city} · ${loc.country}`;
+    document.getElementById('popout-org').textContent    = loc.org;
+    document.getElementById('popout-role').textContent   = loc.role;
+    document.getElementById('popout-desc').textContent   = loc.desc;
+
+    const bulletsEl = document.getElementById('popout-bullets');
+    bulletsEl.innerHTML = loc.highlights.map(h => `<li>${h}</li>`).join('');
+
+    const linkEl = document.getElementById('popout-link');
+    if (loc.link) {
+      linkEl.href          = loc.link;
+      linkEl.textContent   = loc.link.label;
+      linkEl.style.display = 'block';
+    } else {
+      linkEl.style.display = 'none';
+    }
+
+    popoutEl.classList.remove('hidden');
+    popoutEl.setAttribute('aria-hidden', 'false');
+
+    world.pointOfView({ lat: loc.lat, lng: loc.lng, altitude: 2.0 }, 1200);
   }
+
+  function closePopout() {
+    popoutEl.classList.add('hidden');
+    popoutEl.setAttribute('aria-hidden', 'true');
+  }
+
+  closeBtn.addEventListener('click', closePopout);
+
+  // Build globe
+  const container = document.getElementById('globe-container');
+
+  const world = Globe()(container)
+    .globeImageUrl('//unpkg.com/three-globe/example/img/earth-blue-marble.jpg')
+    .bumpImageUrl('//unpkg.com/three-globe/example/img/earth-topology.png')
+    .backgroundImageUrl('//unpkg.com/three-globe/example/img/night-sky.png')
+    .atmosphereColor('#5A9FD4')
+    .atmosphereAltitude(0.14)
+    .htmlElementsData(LOCATIONS)
+    .htmlAltitude(0.01)
+    .htmlElement(d => {
+      const el = document.createElement('div');
+      el.className = 'globe-pin';
+      el.setAttribute('title', d.city);
+      el.innerHTML = `
+        <div class="pin-marker">
+          <div class="pin-pulse"></div>
+          <div class="pin-dot"></div>
+        </div>
+        <div class="pin-label">${d.city}</div>
+      `;
+      el.addEventListener('click', e => {
+        e.stopPropagation();
+        showPopout(d);
+      });
+      return el;
+    })
+    .onGlobeClick(closePopout);
+
+  world.onGlobeReady(() => {
+    world.pointOfView({ lat: 25, lng: -20, altitude: 2.4 });
+
+    const controls = world.controls();
+    controls.autoRotate      = true;
+    controls.autoRotateSpeed = 0.4;
+    controls.enableDamping   = true;
+    controls.dampingFactor   = 0.08;
+
+    controls.addEventListener('start', () => {
+      controls.autoRotate = false;
+    });
+  });
+
+  window.addEventListener('resize', () => {
+    world.width(container.offsetWidth).height(container.offsetHeight);
+  });
 </script>
 
 </body>
