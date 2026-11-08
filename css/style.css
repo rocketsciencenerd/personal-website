@@ -908,6 +908,14 @@ footer {
   margin: 0;
 }
 
+.globe-desc {
+  font-size: 0.82rem;
+  line-height: 1.6;
+  color: rgba(255,255,255,0.58);
+  max-width: 320px;
+  margin: 0;
+}
+
 /* Social icons — bottom-right of globe */
 .globe-socials {
   position: absolute;
@@ -936,6 +944,12 @@ footer {
   height: 15px;
 }
 
+/* Slight dark veil behind nav text on globe page */
+.globe-body nav {
+  background: rgba(0, 0, 0, 0.22);
+  border-bottom-color: transparent;
+}
+
 /* Pin markers */
 .globe-pin {
   transform: translate(-50%, -50%);
@@ -943,6 +957,7 @@ footer {
   flex-direction: column;
   align-items: center;
   cursor: pointer;
+  pointer-events: auto; /* override Globe.gl layer's pointer-events: none */
 }
 
 .pin-marker {
@@ -1134,10 +1149,28 @@ footer {
   text-decoration: none;
 }
 
+/* Animated plane */
+.globe-plane {
+  font-size: 14px;
+  transform: translate(-50%, -50%);
+  pointer-events: none;
+  color: rgba(255, 255, 255, 0.75);
+  text-shadow: 0 0 6px rgba(255, 255, 255, 0.5);
+  line-height: 1;
+  display: block;
+  transition: none;
+}
+
+.globe-plane--prop {
+  font-size: 11px;
+  color: rgba(255, 255, 255, 0.6);
+}
+
 @media (max-width: 768px) {
   .globe-name h1 { font-size: 2rem; }
   .globe-tagline { display: none; }
   .globe-hint { display: none; }
+  .globe-desc { display: none; }
   .globe-socials { display: none; }
 
   .location-popout {

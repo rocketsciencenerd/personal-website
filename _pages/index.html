@@ -51,6 +51,7 @@
       <h1>Katie<br>Heinemann</h1>
     </div>
     <p class="globe-tagline">Aerospace · Software · Public Health</p>
+    <p class="globe-desc">NASA EVA biometrics. COVID-19 emergency response. Water infrastructure across three continents. Click any pin to explore.</p>
     <p class="globe-hint">spin the globe — click a location</p>
   </div>
 
@@ -264,7 +265,7 @@
 
     const linkEl = document.getElementById('popout-link');
     if (loc.link) {
-      linkEl.href          = loc.link;
+      linkEl.href          = loc.link.href;
       linkEl.textContent   = loc.link.label;
       linkEl.style.display = 'block';
     } else {
@@ -296,8 +297,17 @@
     .htmlElementsData(LOCATIONS)
     .htmlAltitude(0.01)
     .htmlElement(d => {
+      if (d.isPlane) {
+        const el = document.createElement('div');
+        el.className = 'globe-plane' + (d.type === 'prop' ? ' globe-plane--prop' : '');
+        el.style.pointerEvents = 'none';
+        el.style.transform     = `translate(-50%, -50%) rotate(${d.bearing}deg)`;
+        el.textContent         = '✈';
+        return el;
+      }
       const el = document.createElement('div');
       el.className = 'globe-pin';
+      el.style.pointerEvents = 'auto'; /* critical: override Globe.gl layer pointer-events:none */
       el.setAttribute('title', d.city);
       el.innerHTML = `
         <div class="pin-marker">
@@ -313,6 +323,66 @@
       return el;
     })
     .onGlobeClick(closePopout);
+
+  // ── Plane animation ──────────────────────────────────────────────
+  const ROUTES = [
+    { from: 'houston',     to: 'baltimore',   type: 'prop' },
+    { from: 'baltimore',   to: 'boston',      type: 'prop' },
+    { from: 'boston',      to: 'strasbourg',  type: 'jet'  },
+    { from: 'strasbourg',  to: 'vienna',      type: 'prop' },
+    { from: 'vienna',      to: 'singapore',   type: 'jet'  },
+    { from: 'singapore',   to: 'houston',     type: 'jet'  },
+    { from: 'houston',     to: 'dunedin',     type: 'prop' },
+    { from: 'dunedin',     to: 'crotonville', type: 'prop' },
+    { from: 'crotonville', to: 'minneapolis', type: 'prop' },
+    { from: 'minneapolis', to: 'riverside',   type: 'prop' },
+    { from: 'riverside',   to: 'boston',      type: 'prop' },
+    { from: 'boston',      to: 'vienna',      type: 'jet'  },
+    { from: 'vienna',      to: 'houston',     type: 'jet'  },
+  ];
+
+  const locById = Object.fromEntries(LOCATIONS.map(l => [l.id, l]));
+
+  function calcBearing(from, to) {
+    const dLng = (to.lng - from.lng) * Math.PI / 180;
+    const lat1 = from.lat * Math.PI / 180;
+    const lat2 = to.lat  * Math.PI / 180;
+    const y = Math.sin(dLng) * Math.cos(lat2);
+    const x = Math.cos(lat1) * Math.sin(lat2) - Math.sin(lat1) * Math.cos(lat2) * Math.cos(dLng);
+    return (Math.atan2(y, x) * 180 / Math.PI + 360) % 360;
+  }
+
+  let routeIdx = 0, planeT = 0;
+  const PLANE = {
+    id: '__plane__', isPlane: true,
+    lat: locById[ROUTES[0].from].lat,
+    lng: locById[ROUTES[0].from].lng,
+    type: ROUTES[0].type,
+    bearing: calcBearing(locById[ROUTES[0].from], locById[ROUTES[0].to])
+  };
+
+  const ALL_HTML_DATA = [...LOCATIONS, PLANE];
+  world.htmlElementsData(ALL_HTML_DATA);
+
+  setInterval(() => {
+    const route = ROUTES[routeIdx];
+    const from  = locById[route.from];
+    const to    = locById[route.to];
+
+    planeT += 0.022;
+    if (planeT >= 1) {
+      planeT    = 0;
+      routeIdx  = (routeIdx + 1) % ROUTES.length;
+      const r   = ROUTES[routeIdx];
+      PLANE.type    = r.type;
+      PLANE.bearing = calcBearing(locById[r.from], locById[r.to]);
+    }
+
+    PLANE.lat = from.lat + (to.lat - from.lat) * planeT;
+    PLANE.lng = from.lng + (to.lng - from.lng) * planeT;
+
+    world.htmlElementsData([...ALL_HTML_DATA]);
+  }, 120);
 
   world.onGlobeReady(() => {
     world.pointOfView({ lat: 25, lng: -20, altitude: 2.4 });
