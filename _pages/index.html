@@ -121,7 +121,7 @@
   if (heroBg) {
     window.addEventListener('scroll', () => {
       const progress = Math.min(window.scrollY / hero.offsetHeight, 1);
-      heroBg.style.transform = `scale(${1 + progress * 0.12})`;
+      heroBg.style.transform = `scale(${1 + progress * 0.25})`;
     }, { passive: true });
   }
 </script>

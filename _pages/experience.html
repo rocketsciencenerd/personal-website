@@ -22,11 +22,8 @@
 
 {{NAV}}
 
-<main class="globe-main">
+<main class="globe-main" id="globe-main">
   <div id="globe-container"></div>
-
-  <!-- plane positioned via rAF + camera projection — never touches htmlElementsData -->
-  <div id="globe-plane-el" class="globe-plane-standalone" aria-hidden="true">✈</div>
 
   <!-- Name + hint overlay -->
   <div class="globe-overlay">
@@ -73,233 +70,106 @@
   const LOCATIONS = [
     {
       id: 'houston',
-      lat: 29.5593,
-      lng: -95.0892,
-      city: 'Houston, TX',
-      country: 'United States',
+      lat: 29.5593, lng: -95.0892,
+      city: 'Houston, TX', country: 'United States',
       org: 'NASA Johnson Space Center',
       role: 'Software Engineer — Spacesuit Systems',
       desc: 'Built the biometric IoT platform used to monitor astronauts in EVA suits at the Neutral Buoyancy Lab. Co-author on publications shaping Artemis EVA planning.',
-      highlights: [
-        'NASA Software of the Year — Honorable Mention',
-        'Real-time biometric monitoring in EVA suits',
-        'Co-author on Artemis EVA planning publications'
-      ],
+      highlights: ['NASA Software of the Year — Honorable Mention', 'Real-time biometric monitoring in EVA suits', 'Co-author on Artemis EVA planning publications'],
       link: { label: 'View Portfolio →', href: 'portfolio.html' }
     },
     {
       id: 'baltimore',
-      lat: 39.2904,
-      lng: -76.6122,
-      city: 'Baltimore, MD',
-      country: 'United States',
+      lat: 39.2904, lng: -76.6122,
+      city: 'Baltimore, MD', country: 'United States',
       org: 'Johns Hopkins Bloomberg School of Public Health',
       role: 'MPH · Planning Chief, COVID-19 Command Center',
       desc: 'Earned MPH. Served as Planning Chief of the JHU COVID-19 Command Center — coordinating a 600-person volunteer network that produced 16,000+ face shields in the first 90 days of the pandemic.',
-      highlights: [
-        'MPH, Johns Hopkins Bloomberg SPH',
-        '600-person volunteer network coordinated',
-        '16,000+ face shields for ICU frontline workers'
-      ],
+      highlights: ['MPH, Johns Hopkins Bloomberg SPH', '600-person volunteer network coordinated', '16,000+ face shields for ICU frontline workers'],
       link: null
     },
     {
       id: 'boston',
-      lat: 42.3601,
-      lng: -71.0589,
-      city: 'Boston, MA',
-      country: 'United States',
+      lat: 42.3601, lng: -71.0589,
+      city: 'Boston, MA', country: 'United States',
       org: 'Ashvin AI · Biobot Analytics',
       role: 'AI Engineering · Wastewater Epidemiology',
       desc: 'AI platform engineering at Ashvin AI. Wastewater epidemiology at Biobot Analytics serving CDC and NIH with national-scale disease surveillance.',
-      highlights: [
-        'Ashvin AI — Aug 2026–Present',
-        'Unified LLM layer integrating 7 AI providers',
-        'SOC 2 Type I + II certified in 6 months',
-        'Biobot Analytics — wastewater surveillance for CDC & NIH'
-      ],
+      highlights: ['Ashvin AI — Aug 2026–Present', 'Unified LLM layer integrating 7 AI providers', 'SOC 2 Type I + II certified in 6 months', 'Biobot Analytics — wastewater surveillance for CDC & NIH'],
       link: { label: 'View Portfolio →', href: 'portfolio.html' }
     },
     {
       id: 'minneapolis',
-      lat: 44.9778,
-      lng: -93.2650,
-      city: 'Minneapolis, MN',
-      country: 'United States',
+      lat: 44.9778, lng: -93.2650,
+      city: 'Minneapolis, MN', country: 'United States',
       org: 'University of Minnesota Twin Cities',
       role: 'BS Aerospace Engineering & Mechanics',
       desc: 'Earned BS in Aerospace Engineering & Mechanics. Recognized as a 2024 University of Minnesota On The Rise Alumni Leader.',
-      highlights: [
-        'BS Aerospace Engineering & Mechanics',
-        '2024 On The Rise Alumni Leader Award'
-      ],
+      highlights: ['BS Aerospace Engineering & Mechanics', '2024 On The Rise Alumni Leader Award'],
       link: null
     },
     {
       id: 'singapore',
-      lat: 1.3521,
-      lng: 103.8198,
-      city: 'Singapore',
-      country: 'Singapore',
+      lat: 1.3521, lng: 103.8198,
+      city: 'Singapore', country: 'Singapore',
       org: 'Micron Technology · GE Power',
       role: 'Water Infrastructure Engineer',
       desc: 'Commissioned ultra-pure water treatment systems for Micron\'s semiconductor fabrication facility — critical infrastructure for chip manufacturing at scale.',
-      highlights: [
-        'Ultra-pure water systems for semiconductor fab',
-        'GE Power infrastructure across three continents'
-      ],
+      highlights: ['Ultra-pure water systems for semiconductor fab', 'GE Power infrastructure across three continents'],
       link: null
     },
     {
       id: 'riverside',
-      lat: 33.9533,
-      lng: -117.3961,
-      city: 'Riverside, CA',
-      country: 'United States',
+      lat: 33.9533, lng: -117.3961,
+      city: 'Riverside, CA', country: 'United States',
       org: 'GE Power',
       role: 'Water Infrastructure Engineer',
       desc: 'Led commissioning of a $240.8M municipal water treatment plant upgrade — one of the largest water infrastructure projects in the region.',
-      highlights: [
-        '$240.8M municipal water treatment upgrade',
-        'Large-scale civil infrastructure commissioning'
-      ],
+      highlights: ['$240.8M municipal water treatment upgrade', 'Large-scale civil infrastructure commissioning'],
       link: null
     },
     {
       id: 'dunedin',
-      lat: 28.0186,
-      lng: -82.7718,
-      city: 'Dunedin, FL',
-      country: 'United States',
+      lat: 28.0186, lng: -82.7718,
+      city: 'Dunedin, FL', country: 'United States',
       org: 'Coca-Cola · GE Power',
       role: 'Water Infrastructure Engineer',
       desc: 'Commissioned a water treatment system upgrade for Coca-Cola\'s Dunedin, Florida facility — industrial process water infrastructure serving beverage manufacturing operations.',
-      highlights: [
-        'Industrial water treatment for Coca-Cola',
-        'GE Power process water systems'
-      ],
+      highlights: ['Industrial water treatment for Coca-Cola', 'GE Power process water systems'],
       link: null
     },
     {
       id: 'crotonville',
-      lat: 41.2048,
-      lng: -73.8734,
-      city: 'Crotonville, NY',
-      country: 'United States',
+      lat: 41.2048, lng: -73.8734,
+      city: 'Crotonville, NY', country: 'United States',
       org: 'GE Crotonville',
       role: 'Management Training',
       desc: 'Attended management and leadership training at GE\'s storied Crotonville campus — one of the world\'s first corporate universities and the flagship of GE\'s leadership development programs.',
-      highlights: [
-        'GE Crotonville leadership development',
-        'Management training at GE\'s corporate university'
-      ],
+      highlights: ['GE Crotonville leadership development', 'Management training at GE\'s corporate university'],
       link: null
     },
     {
       id: 'strasbourg',
-      lat: 48.5734,
-      lng: 7.7521,
-      city: 'Strasbourg, France',
-      country: 'France',
+      lat: 48.5734, lng: 7.7521,
+      city: 'Strasbourg, France', country: 'France',
       org: 'International Space University',
       role: 'Executive Space Course',
       desc: 'Completed the Executive Space Course (ISU) — an intensive interdisciplinary program bringing together space professionals from around the world.',
-      highlights: [
-        'Executive Space Course (ISU)',
-        'Interdisciplinary space education program'
-      ],
+      highlights: ['Executive Space Course (ISU)', 'Interdisciplinary space education program'],
       link: null
     },
     {
       id: 'vienna',
-      lat: 48.2082,
-      lng: 16.3738,
-      city: 'Vienna, Austria',
-      country: 'Austria',
+      lat: 48.2082, lng: 16.3738,
+      city: 'Vienna, Austria', country: 'Austria',
       org: 'United Nations Office for Outer Space Affairs',
       role: 'World Space Forum 2024',
       desc: 'Participated in the United Nations World Space Forum 2024 — a global forum on space policy, sustainable development, and international cooperation.',
-      highlights: [
-        'UN World Space Forum 2024',
-        'International space governance & policy'
-      ],
+      highlights: ['UN World Space Forum 2024', 'International space governance & policy'],
       link: null
     }
   ];
 
-  function formatCoords(lat, lng) {
-    const latDir = lat >= 0 ? 'N' : 'S';
-    const lngDir = lng >= 0 ? 'E' : 'W';
-    return `${Math.abs(lat).toFixed(1)}°${latDir}  ${Math.abs(lng).toFixed(1)}°${lngDir}`;
-  }
-
-  const popoutEl = document.getElementById('location-popout');
-  const closeBtn = document.getElementById('popout-close');
-
-  function showPopout(loc) {
-    document.getElementById('popout-coords').textContent = formatCoords(loc.lat, loc.lng);
-    document.getElementById('popout-city').textContent   = `${loc.city} · ${loc.country}`;
-    document.getElementById('popout-org').textContent    = loc.org;
-    document.getElementById('popout-role').textContent   = loc.role;
-    document.getElementById('popout-desc').textContent   = loc.desc;
-
-    const bulletsEl = document.getElementById('popout-bullets');
-    bulletsEl.innerHTML = loc.highlights.map(h => `<li>${h}</li>`).join('');
-
-    const linkEl = document.getElementById('popout-link');
-    if (loc.link) {
-      linkEl.href          = loc.link.href;
-      linkEl.textContent   = loc.link.label;
-      linkEl.style.display = 'block';
-    } else {
-      linkEl.style.display = 'none';
-    }
-
-    popoutEl.classList.remove('hidden');
-    popoutEl.setAttribute('aria-hidden', 'false');
-
-    world.pointOfView({ lat: loc.lat, lng: loc.lng, altitude: 2.0 }, 1200);
-  }
-
-  function closePopout() {
-    popoutEl.classList.add('hidden');
-    popoutEl.setAttribute('aria-hidden', 'true');
-  }
-
-  closeBtn.addEventListener('click', closePopout);
-
-  // Build globe
-  const container = document.getElementById('globe-container');
-
-  const world = Globe()(container)
-    .globeImageUrl('//unpkg.com/three-globe/example/img/earth-blue-marble.jpg')
-    .bumpImageUrl('//unpkg.com/three-globe/example/img/earth-topology.png')
-    .backgroundImageUrl('//unpkg.com/three-globe/example/img/night-sky.png')
-    .atmosphereColor('#5A9FD4')
-    .atmosphereAltitude(0.14)
-    .htmlElementsData(LOCATIONS)
-    .htmlAltitude(0.01)
-    .htmlElement(d => {
-      const el = document.createElement('div');
-      el.className = 'globe-pin';
-      el.style.pointerEvents = 'auto';
-      el.setAttribute('title', d.city);
-      el.innerHTML = `
-        <div class="pin-marker">
-          <div class="pin-pulse"></div>
-          <div class="pin-dot"></div>
-        </div>
-        <div class="pin-label">${d.city}</div>
-      `;
-      el.addEventListener('click', e => {
-        e.stopPropagation();
-        showPopout(d);
-      });
-      return el;
-    })
-    .onGlobeClick(closePopout);
-
-  // ── Plane animation via rAF + camera projection (never re-calls htmlElementsData) ──
   const ROUTES = [
     { from: 'houston',     to: 'baltimore',   type: 'prop' },
     { from: 'baltimore',   to: 'boston',      type: 'prop' },
@@ -318,18 +188,58 @@
 
   const locById = Object.fromEntries(LOCATIONS.map(l => [l.id, l]));
 
-  function calcBearing(from, to) {
-    const dLng = (to.lng - from.lng) * Math.PI / 180;
-    const lat1 = from.lat * Math.PI / 180;
-    const lat2 = to.lat  * Math.PI / 180;
-    const y = Math.sin(dLng) * Math.cos(lat2);
-    const x = Math.cos(lat1) * Math.sin(lat2) - Math.sin(lat1) * Math.cos(lat2) * Math.cos(dLng);
-    return (Math.atan2(y, x) * 180 / Math.PI + 360) % 360;
+  // ── Popout ──────────────────────────────────────────────────────────
+  function formatCoords(lat, lng) {
+    return `${Math.abs(lat).toFixed(1)}°${lat >= 0 ? 'N' : 'S'}  ${Math.abs(lng).toFixed(1)}°${lng >= 0 ? 'E' : 'W'}`;
   }
 
+  const popoutEl = document.getElementById('location-popout');
+  document.getElementById('popout-close').addEventListener('click', closePopout);
+
+  function showPopout(loc) {
+    document.getElementById('popout-coords').textContent = formatCoords(loc.lat, loc.lng);
+    document.getElementById('popout-city').textContent   = `${loc.city} · ${loc.country}`;
+    document.getElementById('popout-org').textContent    = loc.org;
+    document.getElementById('popout-role').textContent   = loc.role;
+    document.getElementById('popout-desc').textContent   = loc.desc;
+    document.getElementById('popout-bullets').innerHTML  = loc.highlights.map(h => `<li>${h}</li>`).join('');
+
+    const linkEl = document.getElementById('popout-link');
+    if (loc.link) {
+      linkEl.href          = loc.link.href;
+      linkEl.textContent   = loc.link.label;
+      linkEl.style.display = 'block';
+    } else {
+      linkEl.style.display = 'none';
+    }
+
+    popoutEl.classList.remove('hidden');
+    popoutEl.setAttribute('aria-hidden', 'false');
+    world.pointOfView({ lat: loc.lat, lng: loc.lng, altitude: 2.0 }, 1200);
+  }
+
+  function closePopout() {
+    popoutEl.classList.add('hidden');
+    popoutEl.setAttribute('aria-hidden', 'true');
+  }
+
+  // ── Globe (no htmlElementsData — pins are standalone DOM elements) ──
+  const container = document.getElementById('globe-container');
+
+  const world = Globe()(container)
+    .globeImageUrl('//unpkg.com/three-globe/example/img/earth-blue-marble.jpg')
+    .bumpImageUrl('//unpkg.com/three-globe/example/img/earth-topology.png')
+    .backgroundImageUrl('//unpkg.com/three-globe/example/img/night-sky.png')
+    .atmosphereColor('#5A9FD4')
+    .atmosphereAltitude(0.14);
+
+  // Close popout when clicking the globe surface directly
+  container.addEventListener('click', closePopout);
+
+  // ── 3D → 2D projection ─────────────────────────────────────────────
   function mulMat4Vec4(m, x, y, z, w) {
     if (w === undefined) w = 1;
-    const e = m.elements;
+    var e = m.elements;
     return {
       x: e[0]*x + e[4]*y + e[8]*z  + e[12]*w,
       y: e[1]*x + e[5]*y + e[9]*z  + e[13]*w,
@@ -338,17 +248,17 @@
     };
   }
 
-  function latLngToScreen(lat, lng) {
-    const altitude = 0.02;
-    const phi   = (90 - lat) * Math.PI / 180;
-    const theta = (lng + 180) * Math.PI / 180;
-    const r     = world.getGlobeRadius() * (1 + altitude);
-    const wx = -r * Math.sin(phi) * Math.cos(theta);
-    const wy =  r * Math.cos(phi);
-    const wz =  r * Math.sin(phi) * Math.sin(theta);
-    const cam = world.camera();
-    const v   = mulMat4Vec4(cam.matrixWorldInverse, wx, wy, wz);
-    const ndc = mulMat4Vec4(cam.projectionMatrix, v.x, v.y, v.z);
+  function latLngToScreen(lat, lng, altitude) {
+    if (altitude === undefined) altitude = 0.015;
+    var phi   = (90 - lat) * Math.PI / 180;
+    var theta = (lng + 180) * Math.PI / 180;
+    var r     = world.getGlobeRadius() * (1 + altitude);
+    var wx = -r * Math.sin(phi) * Math.cos(theta);
+    var wy =  r * Math.cos(phi);
+    var wz =  r * Math.sin(phi) * Math.sin(theta);
+    var cam = world.camera();
+    var v   = mulMat4Vec4(cam.matrixWorldInverse, wx, wy, wz);
+    var ndc = mulMat4Vec4(cam.projectionMatrix, v.x, v.y, v.z);
     if (ndc.w <= 0 || ndc.z / ndc.w > 1) return null;
     return {
       x: (ndc.x / ndc.w + 1) / 2 * container.clientWidth,
@@ -356,60 +266,112 @@
     };
   }
 
-  let routeIdx  = 0;
-  let planeT    = 0;
-  let lastTs    = null;
-  const planeEl = document.getElementById('globe-plane-el');
+  // ── Standalone pin DOM elements (outside Globe.gl's layer) ─────────
+  var globeMain = document.getElementById('globe-main');
 
-  function animatePlane(ts) {
+  var pinEls = LOCATIONS.map(function(loc) {
+    var el = document.createElement('div');
+    el.className = 'globe-pin';
+    el.style.position = 'absolute';
+    el.style.display  = 'none';
+    el.style.zIndex   = '10';
+    el.setAttribute('title', loc.city);
+    el.innerHTML =
+      '<div class="pin-marker">' +
+        '<div class="pin-pulse"></div>' +
+        '<div class="pin-dot"></div>' +
+      '</div>' +
+      '<div class="pin-label">' + loc.city + '</div>';
+    el.addEventListener('click', function(e) {
+      e.stopPropagation();
+      showPopout(loc);
+    });
+    globeMain.appendChild(el);
+    return { el: el, loc: loc };
+  });
+
+  // ── Standalone plane DOM element ───────────────────────────────────
+  var planeEl = document.createElement('div');
+  planeEl.className = 'globe-plane-standalone';
+  planeEl.style.display = 'none';
+  planeEl.textContent = '✈';
+  globeMain.appendChild(planeEl);
+
+  function calcBearing(from, to) {
+    var dLng = (to.lng - from.lng) * Math.PI / 180;
+    var lat1 = from.lat * Math.PI / 180;
+    var lat2 = to.lat  * Math.PI / 180;
+    var y = Math.sin(dLng) * Math.cos(lat2);
+    var x = Math.cos(lat1) * Math.sin(lat2) - Math.sin(lat1) * Math.cos(lat2) * Math.cos(dLng);
+    return (Math.atan2(y, x) * 180 / Math.PI + 360) % 360;
+  }
+
+  var routeIdx = 0, planeT = 0, lastTs = null;
+
+  // ── Combined rAF loop: positions pins + plane every frame ──────────
+  function animateFrame(ts) {
+    // Update plane position
     if (lastTs !== null) {
-      const dt = Math.min(ts - lastTs, 50);
+      var dt = Math.min(ts - lastTs, 50);
       planeT += dt * 0.0001833;
       if (planeT >= 1) {
-        planeT    = 0;
-        routeIdx  = (routeIdx + 1) % ROUTES.length;
+        planeT = 0;
+        routeIdx = (routeIdx + 1) % ROUTES.length;
       }
     }
     lastTs = ts;
 
-    const route   = ROUTES[routeIdx];
-    const from    = locById[route.from];
-    const to      = locById[route.to];
-    const lat     = from.lat + (to.lat - from.lat) * planeT;
-    const lng     = from.lng + (to.lng - from.lng) * planeT;
-    const bearing = calcBearing(from, to);
+    var route   = ROUTES[routeIdx];
+    var fromLoc = locById[route.from];
+    var toLoc   = locById[route.to];
+    var planeLat     = fromLoc.lat + (toLoc.lat - fromLoc.lat) * planeT;
+    var planeLng     = fromLoc.lng + (toLoc.lng - fromLoc.lng) * planeT;
+    var planeBearing = calcBearing(fromLoc, toLoc);
 
-    const pos = latLngToScreen(lat, lng);
-    if (pos) {
+    var planePos = latLngToScreen(planeLat, planeLng, 0.025);
+    if (planePos) {
       planeEl.style.display   = 'block';
-      planeEl.style.left      = pos.x + 'px';
-      planeEl.style.top       = pos.y + 'px';
-      planeEl.style.transform = `translate(-50%, -50%) rotate(${bearing}deg)`;
+      planeEl.style.left      = planePos.x + 'px';
+      planeEl.style.top       = planePos.y + 'px';
+      planeEl.style.transform = 'translate(-50%, -50%) rotate(' + planeBearing + 'deg)';
       planeEl.className = 'globe-plane-standalone' + (route.type === 'prop' ? ' globe-plane--prop' : '');
     } else {
       planeEl.style.display = 'none';
     }
 
-    requestAnimationFrame(animatePlane);
+    // Update pin positions
+    pinEls.forEach(function(item) {
+      var pos = latLngToScreen(item.loc.lat, item.loc.lng);
+      if (pos) {
+        item.el.style.display = 'flex';
+        item.el.style.left    = pos.x + 'px';
+        item.el.style.top     = pos.y + 'px';
+      } else {
+        item.el.style.display = 'none';
+      }
+    });
+
+    requestAnimationFrame(animateFrame);
   }
 
-  world.onGlobeReady(() => {
+  // ── Globe ready ────────────────────────────────────────────────────
+  world.onGlobeReady(function() {
     world.pointOfView({ lat: 25, lng: -20, altitude: 2.4 });
 
-    const controls = world.controls();
+    var controls = world.controls();
     controls.autoRotate      = true;
     controls.autoRotateSpeed = 0.4;
     controls.enableDamping   = true;
     controls.dampingFactor   = 0.08;
 
-    controls.addEventListener('start', () => {
+    controls.addEventListener('start', function() {
       controls.autoRotate = false;
     });
 
-    requestAnimationFrame(animatePlane);
+    requestAnimationFrame(animateFrame);
   });
 
-  window.addEventListener('resize', () => {
+  window.addEventListener('resize', function() {
     world.width(container.offsetWidth).height(container.offsetHeight);
   });
 </script>
