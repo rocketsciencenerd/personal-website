@@ -67,6 +67,13 @@ nav.nav-overlay .hamburger span {
   color: var(--black);
   font-weight: 600;
   white-space: nowrap;
+  transition: opacity 0.3s ease;
+}
+
+/* Hide brand on homepage while hero is visible — the headline already has the name */
+.home-page nav.nav-overlay .nav-brand {
+  opacity: 0;
+  pointer-events: none;
 }
 
 .nav-links {
@@ -99,16 +106,12 @@ nav.nav-overlay .hamburger span {
   display: none;
   position: fixed;
   inset: 0;
-  background: rgba(0,0,0,0.35);
   z-index: 299;
-  opacity: 0;
-  transition: opacity 0.28s ease;
   pointer-events: none;
 }
 
 .nav-backdrop.open {
   display: block;
-  opacity: 1;
   pointer-events: auto;
 }
 
