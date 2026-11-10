@@ -313,16 +313,20 @@
 
   function latLngToScreen(lat, lng, altitude) {
     if (altitude === undefined) altitude = 0.015;
-    var phi   = (90 - lat) * Math.PI / 180;
-    var theta = (lng + 180) * Math.PI / 180;
-    var r     = world.getGlobeRadius() * (1 + altitude);
-    var wx = -r * Math.sin(phi) * Math.cos(theta);
-    var wy =  r * Math.cos(phi);
-    var wz =  r * Math.sin(phi) * Math.sin(theta);
-    var cam = world.camera();
-    var v   = mulMat4Vec4(cam.matrixWorldInverse, wx, wy, wz);
+
+    // Use Globe.gl's own converter so coordinates match the rendered globe exactly
+    var coords = world.getCoords(lat, lng, altitude);
+    var cam    = world.camera();
+    var r      = world.getGlobeRadius();
+
+    // Back-face cull: point is hidden by the globe when dot(point, camPos) <= r²
+    var dot = coords.x * cam.position.x + coords.y * cam.position.y + coords.z * cam.position.z;
+    if (dot <= r * r) return null;
+
+    var v   = mulMat4Vec4(cam.matrixWorldInverse, coords.x, coords.y, coords.z);
     var ndc = mulMat4Vec4(cam.projectionMatrix, v.x, v.y, v.z);
-    if (ndc.w <= 0 || ndc.z / ndc.w > 1) return null;
+    if (ndc.w <= 0) return null;
+
     return {
       x: (ndc.x / ndc.w + 1) / 2 * container.clientWidth,
       y: (-ndc.y / ndc.w + 1) / 2 * container.clientHeight

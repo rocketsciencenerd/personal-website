@@ -338,6 +338,12 @@ h1, h2, .display {
   color: var(--black);
 }
 
+.about-photos {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
 .about-img-wrapper img {
   width: 100%;
   display: block;
