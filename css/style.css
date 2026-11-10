@@ -418,28 +418,59 @@ h1, h2, .display {
   padding: 0;
 }
 
+/* Simple bullet items (certs, awards, links) */
 .resume-list li {
-  display: flex;
-  align-items: baseline;
-  gap: 0.5rem;
-  padding: 0.35rem 0;
-  font-size: 0.95rem;
-  line-height: 1.5;
-}
-
-.resume-list li::before {
-  content: '•';
-  flex-shrink: 0;
+  padding: 0.3rem 0;
+  font-size: 0.9rem;
+  line-height: 1.55;
+  border-bottom: 1px solid #f2f2f2;
   color: var(--black);
-  font-size: 0.7rem;
-  position: relative;
-  top: -1px;
-  margin-left: 1rem;
-  margin-right: 0.25rem;
 }
 
-.resume-list li em {
-  font-style: italic;
+.resume-list li:last-child { border-bottom: none; }
+
+/* Two-column entry: role/org left, date right */
+.resume-entry {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 2rem;
+  padding: 0.65rem 0;
+  border-bottom: 1px solid #f2f2f2;
+}
+
+.resume-entry:last-child { border-bottom: none; }
+
+.resume-entry-left {
+  flex: 1;
+  min-width: 0;
+}
+
+.resume-role {
+  display: block;
+  font-weight: 600;
+  font-size: 0.9rem;
+  line-height: 1.4;
+  color: var(--black);
+}
+
+.resume-org {
+  display: block;
+  font-size: 0.82rem;
+  color: var(--gray);
+  margin-top: 0.15rem;
+  line-height: 1.4;
+}
+
+.resume-date {
+  flex-shrink: 0;
+  font-size: 0.78rem;
+  font-weight: 500;
+  color: var(--gray);
+  text-align: right;
+  white-space: nowrap;
+  padding-top: 0.15rem;
+  letter-spacing: 0.01em;
 }
 
 /* ── PORTFOLIO ── */
