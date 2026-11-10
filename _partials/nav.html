@@ -23,19 +23,20 @@
     </li>
   </ul>
 </nav>
-<div id="nav-backdrop" class="nav-backdrop" onclick="closeNav()" aria-hidden="true"></div>
 <script>
   function toggleNav() {
     var open = document.getElementById('nav-links').classList.toggle('open');
-    document.getElementById('nav-backdrop').classList.toggle('open', open);
     document.querySelector('.hamburger').setAttribute('aria-label', open ? 'Close menu' : 'Open menu');
   }
   function closeNav() {
     document.getElementById('nav-links').classList.remove('open');
-    document.getElementById('nav-backdrop').classList.remove('open');
     document.querySelector('.hamburger').setAttribute('aria-label', 'Open menu');
   }
   document.addEventListener('keydown', function(e) {
     if (e.key === 'Escape') closeNav();
+  });
+  document.addEventListener('click', function(e) {
+    var nav = document.getElementById('main-nav');
+    if (nav && !nav.contains(e.target)) closeNav();
   });
 </script>

@@ -102,18 +102,6 @@ nav.nav-overlay .hamburger span {
   pointer-events: auto;
 }
 
-.nav-backdrop {
-  display: none;
-  position: fixed;
-  inset: 0;
-  z-index: 299;
-  pointer-events: none;
-}
-
-.nav-backdrop.open {
-  display: block;
-  pointer-events: auto;
-}
 
 .nav-links a {
   font-size: 1.1rem;

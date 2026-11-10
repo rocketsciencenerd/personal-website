@@ -1,0 +1,24 @@
+{
+  "name": "personal-website",
+  "version": "1.0.0",
+  "description": "Personal website for Katie Heinemann — Aerospace Engineer, Software Engineer, MPH.",
+  "main": "build.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/rocketsciencenerd/personal-website.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/rocketsciencenerd/personal-website/issues"
+  },
+  "homepage": "https://github.com/rocketsciencenerd/personal-website#readme",
+  "devDependencies": {
+    "playwright": "^1.65.0"
+  }
+}
